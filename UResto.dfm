@@ -43,7 +43,7 @@ object Form1: TForm1
   end
   object Label5: TLabel
     Left = 100
-    Top = 313
+    Top = 319
     Width = 33
     Height = 13
     Caption = 'Jumlah'
@@ -57,14 +57,14 @@ object Form1: TForm1
   end
   object Label7: TLabel
     Left = 203
-    Top = 222
+    Top = 229
     Width = 60
     Height = 13
     Caption = 'Rp. 3000,00'
   end
   object Label8: TLabel
     Left = 203
-    Top = 241
+    Top = 257
     Width = 60
     Height = 13
     Caption = 'Rp. 1000,00'
@@ -96,6 +96,27 @@ object Form1: TForm1
     Height = 13
     Caption = 'Total Harga'
   end
+  object Label12: TLabel
+    Left = 321
+    Top = 198
+    Width = 33
+    Height = 13
+    Caption = 'Jumlah'
+  end
+  object Label13: TLabel
+    Left = 320
+    Top = 229
+    Width = 33
+    Height = 13
+    Caption = 'Jumlah'
+  end
+  object Label14: TLabel
+    Left = 320
+    Top = 257
+    Width = 33
+    Height = 13
+    Caption = 'Jumlah'
+  end
   object RadioButton1: TRadioButton
     Left = 100
     Top = 74
@@ -122,7 +143,7 @@ object Form1: TForm1
   end
   object BitBtn1: TBitBtn
     Left = 140
-    Top = 263
+    Top = 280
     Width = 77
     Height = 25
     Caption = 'Hitung'
@@ -136,6 +157,7 @@ object Form1: TForm1
     Height = 17
     Caption = 'ES Teh Manis'
     TabOrder = 4
+    OnClick = CheckBox1Click
   end
   object RadioButton2: TRadioButton
     Left = 212
@@ -148,26 +170,28 @@ object Form1: TForm1
   end
   object Edit2: TEdit
     Left = 137
-    Top = 310
+    Top = 316
     Width = 123
     Height = 21
     TabOrder = 6
   end
   object CheckBox2: TCheckBox
     Left = 100
-    Top = 217
+    Top = 224
     Width = 99
     Height = 17
     Caption = 'ES Jeruk'
     TabOrder = 7
+    OnClick = CheckBox2Click
   end
   object CheckBox3: TCheckBox
     Left = 100
-    Top = 240
+    Top = 256
     Width = 99
     Height = 17
     Caption = 'Air Putih'
     TabOrder = 8
+    OnClick = CheckBox3Click
   end
   object Edit3: TEdit
     Left = 382
@@ -200,6 +224,84 @@ object Form1: TForm1
     Height = 25
     Caption = '-'
     TabOrder = 12
+    OnClick = BitBtn3Click
+  end
+  object Edit5: TEdit
+    Left = 382
+    Top = 192
+    Width = 60
+    Height = 21
+    TabOrder = 13
+    OnChange = Edit3Change
+  end
+  object BitBtn4: TBitBtn
+    Left = 448
+    Top = 190
+    Width = 26
+    Height = 25
+    Caption = '+'
+    TabOrder = 14
+    OnClick = BitBtn4Click
+  end
+  object BitBtn5: TBitBtn
+    Left = 480
+    Top = 190
+    Width = 23
+    Height = 25
+    Caption = '-'
+    TabOrder = 15
+    OnClick = BitBtn5Click
+  end
+  object Edit6: TEdit
+    Left = 381
+    Top = 223
+    Width = 60
+    Height = 21
+    TabOrder = 16
+    OnChange = Edit3Change
+  end
+  object BitBtn6: TBitBtn
+    Left = 447
+    Top = 221
+    Width = 26
+    Height = 25
+    Caption = '+'
+    TabOrder = 17
+    OnClick = BitBtn6Click
+  end
+  object BitBtn7: TBitBtn
+    Left = 479
+    Top = 221
+    Width = 23
+    Height = 25
+    Caption = '-'
+    TabOrder = 18
+    OnClick = BitBtn7Click
+  end
+  object Edit7: TEdit
+    Left = 381
+    Top = 251
+    Width = 60
+    Height = 21
+    TabOrder = 19
+    OnChange = Edit3Change
+  end
+  object BitBtn8: TBitBtn
+    Left = 447
+    Top = 249
+    Width = 26
+    Height = 25
+    Caption = '+'
+    TabOrder = 20
+    OnClick = BitBtn2Click
+  end
+  object BitBtn9: TBitBtn
+    Left = 479
+    Top = 249
+    Width = 23
+    Height = 25
+    Caption = '-'
+    TabOrder = 21
     OnClick = BitBtn3Click
   end
 end
