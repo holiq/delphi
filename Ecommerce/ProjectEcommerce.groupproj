@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F7DE1620-21E6-410F-9EAF-6F28DE853F8B}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Ecommerce.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Ecommerce">
+        <MSBuild Projects="Ecommerce.dproj"/>
+    </Target>
+    <Target Name="Ecommerce:Clean">
+        <MSBuild Projects="Ecommerce.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Ecommerce:Make">
+        <MSBuild Projects="Ecommerce.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Ecommerce"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Ecommerce:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Ecommerce:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
