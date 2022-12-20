@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormMinMax: TFormMinMax
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'FormMinMax'
   ClientHeight = 386
   ClientWidth = 720
   Color = clBtnFace
