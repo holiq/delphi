@@ -32,6 +32,7 @@ type
     Edit5: TEdit;
     BitBtn9: TBitBtn;
     BitBtn10: TBitBtn;
+    BitBtn11: TBitBtn;
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
@@ -42,6 +43,7 @@ type
     procedure BitBtn6Click(Sender: TObject);
     procedure BitBtn8Click(Sender: TObject);
     procedure BitBtn10Click(Sender: TObject);
+    procedure BitBtn11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,11 +52,13 @@ type
 
 var
   Form3: TForm3;
-  HBaju, HCelana, HBiskuit, HNanas: Currency;
+  HBaju, HCelana, HBiskuit, HNanas, HTotal: Currency;
 
 implementation
 
 {$R *.dfm}
+
+uses UCheckout;
 
 procedure TForm3.BitBtn1Click(Sender: TObject);
 begin
@@ -115,24 +119,38 @@ end;
 
 procedure TForm3.BitBtn10Click(Sender: TObject);
 begin
+  Form4.Memo1.Clear;
   if CheckBox1.Checked then
   begin
     HBaju:= 130000*StrToCurr(Edit1.Text);
+    Form4.Memo1.Lines.Add('Baju Kemeja: Rp. 130000 x '+Edit1.Text+' = '+Format('RP. %n', [HBaju]));
   end;
   if CheckBox2.Checked then
   begin
     HCelana:= 90000*StrToCurr(Edit2.Text);
+    Form4.Memo1.Lines.Add('Celana Hitam: Rp. 90000 x '+Edit2.Text+' = '+Format('RP. %n', [HCelana]));
   end;
   if CheckBox3.Checked then
   begin
     HBiskuit:= 9000*StrToCurr(Edit3.Text);
+    Form4.Memo1.Lines.Add('Biskuit: Rp. 9000 x '+Edit3.Text+' = '+Format('RP. %n', [HBiskuit]));
   end;
   if CheckBox4.Checked then
   begin
     HNanas:= 18000*StrToCurr(Edit4.Text);
+    Form4.Memo1.Lines.Add('Nanas Muda: Rp. 18000 x '+Edit4.Text+' = '+Format('RP. %n', [HNanas]));
   end;
 
-  Edit5.Text:= Format('RP. %n', [HBaju+HCelana+HBiskuit+HNanas]);
+  HTotal:= HBaju+HCelana+HBiskuit+HNanas;
+  Form4.Memo1.Lines.Add('Total Harga: '+Format('RP. %n', [HTotal]));
+  Edit5.Text:= Format('RP. %n', [HTotal]);
+end;
+
+procedure TForm3.BitBtn11Click(Sender: TObject);
+begin
+  Form4.memo2.Clear;
+  Form4.Show;
+  form3.Hide;
 end;
 
 end.

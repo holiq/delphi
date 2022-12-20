@@ -213,4 +213,13 @@ object Form3: TForm3
     TabOrder = 18
     OnClick = BitBtn10Click
   end
+  object BitBtn11: TBitBtn
+    Left = 618
+    Top = 254
+    Width = 75
+    Height = 25
+    Caption = 'Bayar'
+    TabOrder = 19
+    OnClick = BitBtn11Click
+  end
 end
