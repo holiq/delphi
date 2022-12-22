@@ -19,8 +19,11 @@ type
     Memo2: TMemo;
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
+    Label6: TLabel;
+    ComboBox3: TComboBox;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure ComboBox3Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,7 +37,7 @@ implementation
 
 {$R *.dfm}
 
-uses UOrder;
+uses UOrder, UCart;
 
 procedure TForm4.BitBtn1Click(Sender: TObject);
 begin
@@ -44,11 +47,33 @@ end;
 procedure TForm4.BitBtn2Click(Sender: TObject);
 begin
   Form5.Memo1.Lines:= Form4.Memo1.Lines;
+  if combobox3.ItemIndex = 0 then
+  begin
+    Form5.Memo1.Lines.Delete(Form5.Memo1.Lines.Count-1);
+    Form5.Memo1.Lines.Add('Voucher: Diskon Rp. 10.000,00');
+    Form5.Memo1.Lines.Add('Total Harga: '+Format('RP. %n', [Form3.HTotal-10000]));
+  end
+  else if ComboBox3.ItemIndex = 1 then
+  begin
+    Form5.Memo1.Lines.Delete(Memo1.Lines.Count-1);
+    Form5.Memo1.Lines.Add('Voucher: Diskon 15%');
+    Form5.Memo1.Lines.Add('Total Harga: '+Format('RP. %n', [Form3.HTotal-(Form3.HTotal/100*15)]));
+  end;
   Form5.Memo2.Lines:= Form4.Memo2.Lines;
   Form5.Label3.Caption:= 'Metode Pembayaran: '+Form4.ComboBox1.Items[Form4.ComboBox1.ItemIndex];
   Form5.Label4.Caption:= 'Metode Pengiriman: '+Form4.ComboBox2.Items[Form4.ComboBox2.ItemIndex];
   Form5.Show;
   Form4.Hide;
   end;
+
+procedure TForm4.ComboBox3Change(Sender: TObject);
+begin
+//  if combobox3.ItemIndex = 0 then
+//  begin
+//    Memo1.Lines.Delete(Memo1.Lines.Count-1);
+//    Memo1.Lines.Add('Voucher: Diskon Rp. 10.000,00');
+//    Memo1.Lines.Add('Total Harga: '+Format('RP. %n', [])
+//  end;
+end;
 
 end.

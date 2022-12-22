@@ -43,9 +43,9 @@ object Form4: TForm4
   object Label4: TLabel
     Left = 327
     Top = 184
-    Width = 91
+    Width = 150
     Height = 13
-    Caption = 'Metode Pengiriman'
+    Caption = 'Metode Pengiriman Free Ongkir'
   end
   object Label5: TLabel
     Left = 327
@@ -53,6 +53,13 @@ object Form4: TForm4
     Width = 33
     Height = 13
     Caption = 'Alamat'
+  end
+  object Label6: TLabel
+    Left = 327
+    Top = 236
+    Width = 60
+    Height = 13
+    Caption = 'Pilih Voucher'
   end
   object Memo1: TMemo
     Left = 32
@@ -71,11 +78,10 @@ object Form4: TForm4
     Height = 21
     TabOrder = 2
     Items.Strings = (
-      'COD'
-      'ALFAMART'
-      'INDOMART'
-      'TRANSFER'
-      'KREDIT')
+      'Credit'
+      'Gerai'
+      'Internet Banking'
+      'Cicilan')
   end
   object ComboBox2: TComboBox
     Left = 327
@@ -84,10 +90,10 @@ object Form4: TForm4
     Height = 21
     TabOrder = 1
     Items.Strings = (
-      'SAMEDAY'
-      'JNE'
-      'JNT'
-      'KARGO')
+      'Reguler'
+      'Sameday'
+      'Nextday'
+      'Cargo')
   end
   object Memo2: TMemo
     Left = 327
@@ -115,5 +121,16 @@ object Form4: TForm4
     Caption = 'Pesan Sekarang'
     TabOrder = 5
     OnClick = BitBtn2Click
+  end
+  object ComboBox3: TComboBox
+    Left = 327
+    Top = 255
+    Width = 145
+    Height = 21
+    TabOrder = 6
+    OnChange = ComboBox3Change
+    Items.Strings = (
+      'Diskon Rp. 10.000,00'
+      'Diskon 15%')
   end
 end

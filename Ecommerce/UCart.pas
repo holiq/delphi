@@ -48,11 +48,12 @@ type
     { Private declarations }
   public
     { Public declarations }
+    var
+      HBaju, HCelana, HBiskuit, HNanas, HTotal: Currency;
   end;
 
 var
   Form3: TForm3;
-  HBaju, HCelana, HBiskuit, HNanas, HTotal: Currency;
 
 implementation
 
