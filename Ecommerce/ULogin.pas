@@ -14,6 +14,8 @@ type
     Edit1: TEdit;
     Edit2: TEdit;
     BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
@@ -32,11 +34,11 @@ uses UDashboard;
 
 procedure TForm1.BitBtn1Click(Sender: TObject);
 begin
-  if (Edit1.Text = 'holiq') AND (Edit2.Text = 'password') then
+  if (Edit1.Text = '081213141516') AND (Edit2.Text = 'password') then
   begin
     Form1.Hide;
     Form2.Show;
-    Form2.Label1.Caption:= 'Welcome '+Form1.Edit1.Text;
+    Form2.Label1.Caption:= 'Selamat datang kembali Holiq';
   end
   else
   begin

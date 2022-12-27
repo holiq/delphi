@@ -35,14 +35,14 @@ object Form4: TForm4
   end
   object Label3: TLabel
     Left = 327
-    Top = 131
+    Top = 93
     Width = 99
     Height = 13
     Caption = 'Metode Pembayaran'
   end
   object Label4: TLabel
     Left = 327
-    Top = 184
+    Top = 146
     Width = 150
     Height = 13
     Caption = 'Metode Pengiriman Free Ongkir'
@@ -56,10 +56,17 @@ object Form4: TForm4
   end
   object Label6: TLabel
     Left = 327
-    Top = 236
+    Top = 198
     Width = 60
     Height = 13
     Caption = 'Pilih Voucher'
+  end
+  object Label7: TLabel
+    Left = 495
+    Top = 39
+    Width = 58
+    Height = 13
+    Caption = 'Alamat Baru'
   end
   object Memo1: TMemo
     Left = 32
@@ -73,7 +80,7 @@ object Form4: TForm4
   end
   object ComboBox1: TComboBox
     Left = 327
-    Top = 150
+    Top = 112
     Width = 145
     Height = 21
     TabOrder = 2
@@ -81,11 +88,12 @@ object Form4: TForm4
       'Credit'
       'Gerai'
       'Internet Banking'
-      'Cicilan')
+      'Cicilan'
+      'COD')
   end
   object ComboBox2: TComboBox
     Left = 327
-    Top = 203
+    Top = 165
     Width = 145
     Height = 21
     TabOrder = 1
@@ -96,7 +104,7 @@ object Form4: TForm4
       'Cargo')
   end
   object Memo2: TMemo
-    Left = 327
+    Left = 495
     Top = 62
     Width = 153
     Height = 59
@@ -124,7 +132,7 @@ object Form4: TForm4
   end
   object ComboBox3: TComboBox
     Left = 327
-    Top = 255
+    Top = 217
     Width = 145
     Height = 21
     TabOrder = 6
@@ -132,5 +140,23 @@ object Form4: TForm4
     Items.Strings = (
       'Diskon Rp. 10.000,00'
       'Diskon 15%')
+  end
+  object ComboBox4: TComboBox
+    Left = 327
+    Top = 62
+    Width = 145
+    Height = 21
+    TabOrder = 7
+    Items.Strings = (
+      'Cukanggalih, Curug, Tangerang')
+  end
+  object BitBtn3: TBitBtn
+    Left = 560
+    Top = 127
+    Width = 88
+    Height = 25
+    Caption = 'Tambah Alamat'
+    TabOrder = 8
+    OnClick = BitBtn3Click
   end
 end

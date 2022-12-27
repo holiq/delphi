@@ -30,9 +30,9 @@ object Form3: TForm3
   object Label3: TLabel
     Left = 190
     Top = 144
-    Width = 64
+    Width = 86
     Height = 13
-    Caption = 'Rp. 9.000,00'
+    Caption = 'Rp. 9.000.000,00'
   end
   object Label4: TLabel
     Left = 190
@@ -53,7 +53,7 @@ object Form3: TForm3
     Top = 56
     Width = 97
     Height = 17
-    Caption = 'Baju Kemeja'
+    Caption = 'Abon Sapi 1kg'
     TabOrder = 0
   end
   object CheckBox2: TCheckBox
@@ -61,7 +61,7 @@ object Form3: TForm3
     Top = 103
     Width = 97
     Height = 17
-    Caption = 'Celana Hitam'
+    Caption = 'KopiHitam 1kg'
     TabOrder = 1
   end
   object CheckBox3: TCheckBox
@@ -69,7 +69,7 @@ object Form3: TForm3
     Top = 143
     Width = 97
     Height = 17
-    Caption = 'Biskuit Coklat'
+    Caption = 'TV 50 inch'
     TabOrder = 2
   end
   object CheckBox4: TCheckBox
@@ -77,7 +77,7 @@ object Form3: TForm3
     Top = 184
     Width = 97
     Height = 17
-    Caption = 'Nanas Muda'
+    Caption = 'EarPhone'
     TabOrder = 3
   end
   object Edit1: TEdit

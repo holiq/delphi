@@ -124,22 +124,22 @@ begin
   if CheckBox1.Checked then
   begin
     HBaju:= 130000*StrToCurr(Edit1.Text);
-    Form4.Memo1.Lines.Add('Baju Kemeja: Rp. 130000 x '+Edit1.Text+' = '+Format('RP. %n', [HBaju]));
+    Form4.Memo1.Lines.Add('Abon Sapi 1kg: Rp. 130.000,00 x '+Edit1.Text+' = '+Format('RP. %n', [HBaju]));
   end;
   if CheckBox2.Checked then
   begin
     HCelana:= 90000*StrToCurr(Edit2.Text);
-    Form4.Memo1.Lines.Add('Celana Hitam: Rp. 90000 x '+Edit2.Text+' = '+Format('RP. %n', [HCelana]));
+    Form4.Memo1.Lines.Add('Kopi Hitam 1kg: Rp. 90.000,00 x '+Edit2.Text+' = '+Format('RP. %n', [HCelana]));
   end;
   if CheckBox3.Checked then
   begin
-    HBiskuit:= 9000*StrToCurr(Edit3.Text);
-    Form4.Memo1.Lines.Add('Biskuit: Rp. 9000 x '+Edit3.Text+' = '+Format('RP. %n', [HBiskuit]));
+    HBiskuit:= 9000000*StrToCurr(Edit3.Text);
+    Form4.Memo1.Lines.Add('TV 50inch: Rp. 9.000.000,00 x '+Edit3.Text+' = '+Format('RP. %n', [HBiskuit]));
   end;
   if CheckBox4.Checked then
   begin
     HNanas:= 18000*StrToCurr(Edit4.Text);
-    Form4.Memo1.Lines.Add('Nanas Muda: Rp. 18000 x '+Edit4.Text+' = '+Format('RP. %n', [HNanas]));
+    Form4.Memo1.Lines.Add('EarPhone: Rp. 18.000,00 x '+Edit4.Text+' = '+Format('RP. %n', [HNanas]));
   end;
 
   HTotal:= HBaju+HCelana+HBiskuit+HNanas;
@@ -149,7 +149,7 @@ end;
 
 procedure TForm3.BitBtn11Click(Sender: TObject);
 begin
-  Form4.memo2.Clear;
+  Form4.Memo2.Clear;
   Form4.Show;
   form3.Hide;
 end;

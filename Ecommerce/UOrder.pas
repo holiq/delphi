@@ -17,6 +17,7 @@ type
     Memo2: TMemo;
     BitBtn1: TBitBtn;
     Label6: TLabel;
+    Label7: TLabel;
     procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }

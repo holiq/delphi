@@ -21,9 +21,13 @@ type
     BitBtn2: TBitBtn;
     Label6: TLabel;
     ComboBox3: TComboBox;
+    ComboBox4: TComboBox;
+    BitBtn3: TBitBtn;
+    Label7: TLabel;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure ComboBox3Change(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,12 +63,20 @@ begin
     Form5.Memo1.Lines.Add('Voucher: Diskon 15%');
     Form5.Memo1.Lines.Add('Total Harga: '+Format('RP. %n', [Form3.HTotal-(Form3.HTotal/100*15)]));
   end;
-  Form5.Memo2.Lines:= Form4.Memo2.Lines;
+  Form5.Memo2.Clear;
+  Form5.Memo2.Lines.Add(Form4.ComboBox4.Items[Form4.ComboBox4.ItemIndex]);
   Form5.Label3.Caption:= 'Metode Pembayaran: '+Form4.ComboBox1.Items[Form4.ComboBox1.ItemIndex];
+  Form5.Label7.Caption:= 'kode pembayaran: BL22188FX22TKS';
   Form5.Label4.Caption:= 'Metode Pengiriman: '+Form4.ComboBox2.Items[Form4.ComboBox2.ItemIndex];
   Form5.Show;
   Form4.Hide;
-  end;
+end;
+
+procedure TForm4.BitBtn3Click(Sender: TObject);
+begin
+  ComboBox4.Items.Add(Memo2.Lines.GetText);
+  Memo2.Clear;
+end;
 
 procedure TForm4.ComboBox3Change(Sender: TObject);
 begin

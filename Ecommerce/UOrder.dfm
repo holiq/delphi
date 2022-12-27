@@ -28,28 +28,28 @@ object Form5: TForm5
   end
   object Label2: TLabel
     Left = 57
-    Top = 88
+    Top = 104
     Width = 75
     Height = 13
     Caption = 'Daftar Pesanan'
   end
   object Label3: TLabel
     Left = 381
-    Top = 202
+    Top = 208
     Width = 95
     Height = 13
     Caption = 'DummyPembayaran'
   end
   object Label4: TLabel
     Left = 381
-    Top = 225
+    Top = 241
     Width = 87
     Height = 13
     Caption = 'DummyPengiriman'
   end
   object Label5: TLabel
     Left = 381
-    Top = 88
+    Top = 104
     Width = 80
     Height = 13
     Caption = 'Alamat Penerima'
@@ -63,9 +63,16 @@ object Form5: TForm5
       'Terimakasih telah memesan di toko kami, dan berikut detail pesan' +
       'anmu'
   end
+  object Label7: TLabel
+    Left = 381
+    Top = 225
+    Width = 119
+    Height = 13
+    Caption = 'DummyKodePembayaran'
+  end
   object Memo1: TMemo
     Left = 57
-    Top = 107
+    Top = 123
     Width = 296
     Height = 133
     Lines.Strings = (
@@ -75,9 +82,9 @@ object Form5: TForm5
   end
   object Memo2: TMemo
     Left = 381
-    Top = 107
+    Top = 123
     Width = 158
-    Height = 85
+    Height = 70
     Lines.Strings = (
       'Memo2')
     ReadOnly = True
