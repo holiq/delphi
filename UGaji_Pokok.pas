@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TForm1 = class(TForm)
+  TFormGajiPokok = class(TForm)
     Label1: TLabel;
     Edit1: TEdit;
     Edit2: TEdit;
@@ -38,7 +38,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormGajiPokok: TFormGajiPokok;
   GTraining, GKontrak, GTetap, TTraining,
   TKontrak, TTetap, Gaji, Tunjangan: Currency;
   Jabatan: char;
@@ -47,12 +47,12 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.BitBtn1Click(Sender: TObject);
+procedure TFormGajiPokok.BitBtn1Click(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TForm1.BitBtn2Click(Sender: TObject);
+procedure TFormGajiPokok.BitBtn2Click(Sender: TObject);
 begin
 Edit1.Clear;
 Edit2.Clear;
@@ -61,7 +61,7 @@ Edit4.Clear;
 ComboBox1.ClearSelection;
 end;
 
-procedure TForm1.ComboBox1Change(Sender: TObject);
+procedure TFormGajiPokok.ComboBox1Change(Sender: TObject);
 begin
   if ComboBox1.ItemIndex = 0 then
   begin
@@ -145,7 +145,7 @@ begin
   Edit4.Text:= Format('Rp. %n', [Gaji+Tunjangan]);
 end;
 
-procedure TForm1.RadioButton1Click(Sender: TObject);
+procedure TFormGajiPokok.RadioButton1Click(Sender: TObject);
 begin
   if ComboBox1.ItemIndex = 0 then
   begin
@@ -177,7 +177,7 @@ begin
 
 end;
 
-procedure TForm1.RadioButton2Click(Sender: TObject);
+procedure TFormGajiPokok.RadioButton2Click(Sender: TObject);
 begin
   if ComboBox1.ItemIndex = 0 then
   begin
@@ -208,7 +208,7 @@ begin
   Edit4.Text:= Format('Rp. %n', [GKontrak+TKontrak]);
 end;
 
-procedure TForm1.RadioButton3Click(Sender: TObject);
+procedure TFormGajiPokok.RadioButton3Click(Sender: TObject);
 begin
   if ComboBox1.ItemIndex = 0 then
   begin

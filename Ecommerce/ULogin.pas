@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TForm1 = class(TForm)
+  TFormLogin = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -24,7 +24,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormLogin: TFormLogin;
 
 implementation
 
@@ -32,11 +32,11 @@ implementation
 
 uses UDashboard;
 
-procedure TForm1.BitBtn1Click(Sender: TObject);
+procedure TFormLogin.BitBtn1Click(Sender: TObject);
 begin
   if (Edit1.Text = '081213141516') AND (Edit2.Text = 'password') then
   begin
-    Form1.Hide;
+    FormLogin.Hide;
     Form2.Show;
     Form2.Label1.Caption:= 'Selamat datang kembali Holiq';
   end

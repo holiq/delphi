@@ -2,7 +2,7 @@
 
 uses
   Vcl.Forms,
-  ULogin in 'ULogin.pas' {Form1},
+  ULogin in 'ULogin.pas' {FormLogin},
   UDashboard in 'UDashboard.pas' {Form2},
   UCart in 'UCart.pas' {Form3},
   UCheckout in 'UCheckout.pas' {Form4},
@@ -13,7 +13,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormLogin, FormLogin);
   Application.CreateForm(TForm2, Form2);
   Application.CreateForm(TForm3, Form3);
   Application.CreateForm(TForm4, Form4);

@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormGajiPokok: TFormGajiPokok
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'FormGajiPokok'
   ClientHeight = 364
   ClientWidth = 708
   Color = clBtnFace

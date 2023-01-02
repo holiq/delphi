@@ -2,13 +2,13 @@
 
 uses
   Vcl.Forms,
-  UbangunRuang in 'UbangunRuang.pas' {Form1};
+  UbangunRuang in 'UbangunRuang.pas' {FormBangunRuang};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormBangunRuang, FormBangunRuang);
   Application.Run;
 end.
