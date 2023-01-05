@@ -1,6 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{51E22346-80B0-4853-BA88-77D5D0716DAC}</ProjectGuid>
+        <ProjectGuid>{64CD5D02-66D7-4FC7-981C-D64BCA6C117B}</ProjectGuid>
         <ProjectVersion>19.2</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <Base>True</Base>
@@ -99,7 +99,7 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="UAritFunction.pas">
-            <Form>Form1</Form>
+            <Form>FormAritFunction</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FormAritFunction: TFormAritFunction
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 367
-  ClientWidth = 632
+  Caption = 'FormAritFunction'
+  ClientHeight = 325
+  ClientWidth = 712
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,81 +14,81 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 152
-    Top = 64
+    Left = 144
+    Top = 48
     Width = 39
     Height = 13
-    Caption = 'Angjka1'
+    Caption = 'Angka 1'
   end
   object Label2: TLabel
-    Left = 152
-    Top = 104
-    Width = 36
+    Left = 144
+    Top = 75
+    Width = 39
     Height = 13
-    Caption = 'Angka2'
+    Caption = 'Angka 2'
   end
   object Label3: TLabel
-    Left = 152
-    Top = 144
+    Left = 144
+    Top = 112
     Width = 22
     Height = 13
     Caption = 'Hasil'
   end
   object Edit1: TEdit
-    Left = 240
-    Top = 61
+    Left = 200
+    Top = 45
     Width = 121
     Height = 21
     TabOrder = 0
   end
   object Edit2: TEdit
-    Left = 240
-    Top = 101
+    Left = 200
+    Top = 72
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object Edit3: TEdit
-    Left = 240
-    Top = 141
+    Left = 200
+    Top = 109
     Width = 121
     Height = 21
     TabOrder = 2
   end
-  object BitBtn1: TBitBtn
-    Left = 40
-    Top = 192
+  object Button1: TButton
+    Left = 64
+    Top = 160
     Width = 75
     Height = 25
     Caption = '+'
     TabOrder = 3
-    OnClick = BitBtn1Click
+    OnClick = Button1Click
   end
-  object BitBtn2: TBitBtn
-    Left = 152
-    Top = 192
+  object Button2: TButton
+    Left = 193
+    Top = 160
     Width = 75
     Height = 25
     Caption = '-'
     TabOrder = 4
-    OnClick = BitBtn2Click
+    OnClick = Button2Click
   end
-  object BitBtn3: TBitBtn
-    Left = 264
-    Top = 192
+  object Button3: TButton
+    Left = 304
+    Top = 160
     Width = 75
     Height = 25
     Caption = '*'
     TabOrder = 5
-    OnClick = BitBtn3Click
+    OnClick = Button3Click
   end
-  object BitBtn4: TBitBtn
-    Left = 384
-    Top = 192
+  object Button4: TButton
+    Left = 424
+    Top = 160
     Width = 75
     Height = 25
     Caption = '/'
     TabOrder = 6
-    OnClick = BitBtn4Click
+    OnClick = Button4Click
   end
 end

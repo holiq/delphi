@@ -2,13 +2,13 @@
 
 uses
   Vcl.Forms,
-  UAritProcedure in 'UAritProcedure.pas' {Form1};
+  UAritProcedure in 'UAritProcedure.pas' {FormAritProcedure};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFormAritProcedure, FormAritProcedure);
   Application.Run;
 end.

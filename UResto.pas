@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
-  TForm1 = class(TForm)
+  TFormResto = class(TForm)
     Label1: TLabel;
     RadioButton1: TRadioButton;
     ComboBox1: TComboBox;
@@ -67,7 +67,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormResto: TFormResto;
   MenuPadang, MenuBetawi: TArray<string>;
   Harga, HargaTeh, HargaJeruk, HargaAir,
   TotalTeh, TotalJeruk, TotalAir,
@@ -77,26 +77,27 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.RadioButton1Click(Sender: TObject);
+procedure TFormResto.RadioButton1Click(Sender: TObject);
 begin
   ComboBox1.Clear;
   MenuPadang:= ['Kepala Kakap','Rendang','Sate Padang'];
   ComboBox1.Items.AddStrings(MenuPadang);
 end;
 
-procedure TForm1.RadioButton2Click(Sender: TObject);
+procedure TFormResto.RadioButton2Click(Sender: TObject);
 begin
   ComboBox1.Clear;
+  // @array
   MenuBetawi:= ['Kerak Telor','Soto Betawi','Nasi Ulam'];
   ComboBox1.Items.AddStrings(MenuBetawi);
 end;
 
-procedure TForm1.BitBtn2Click(Sender: TObject);
+procedure TFormResto.BitBtn2Click(Sender: TObject);
 begin
   Edit3.Text:= CurrToStr(StrToCurr(Edit3.Text)+1);
 end;
 
-procedure TForm1.BitBtn3Click(Sender: TObject);
+procedure TFormResto.BitBtn3Click(Sender: TObject);
 begin
   if StrToInt(Edit3.Text) > 1 then
   begin
@@ -104,12 +105,12 @@ begin
   end;
 end;
 
-procedure TForm1.BitBtn4Click(Sender: TObject);
+procedure TFormResto.BitBtn4Click(Sender: TObject);
 begin
   Edit5.Text:= CurrToStr(StrToCurr(Edit5.Text)+1);
 end;
 
-procedure TForm1.BitBtn5Click(Sender: TObject);
+procedure TFormResto.BitBtn5Click(Sender: TObject);
 begin
   if StrToInt(Edit5.Text) > 1 then
   begin
@@ -117,12 +118,12 @@ begin
   end;
 end;
 
-procedure TForm1.BitBtn6Click(Sender: TObject);
+procedure TFormResto.BitBtn6Click(Sender: TObject);
 begin
   Edit6.Text:= CurrToStr(StrToCurr(Edit6.Text)+1);
 end;
 
-procedure TForm1.BitBtn7Click(Sender: TObject);
+procedure TFormResto.BitBtn7Click(Sender: TObject);
 begin
   if StrToInt(Edit6.Text) > 1 then
   begin
@@ -130,12 +131,12 @@ begin
   end;
 end;
 
-procedure TForm1.BitBtn8Click(Sender: TObject);
+procedure TFormResto.BitBtn8Click(Sender: TObject);
 begin
   Edit7.Text:= CurrToStr(StrToCurr(Edit7.Text)+1);
 end;
 
-procedure TForm1.BitBtn9Click(Sender: TObject);
+procedure TFormResto.BitBtn9Click(Sender: TObject);
 begin
   if StrToInt(Edit7.Text) > 1 then
   begin
@@ -143,7 +144,7 @@ begin
   end;
 end;
 
-procedure TForm1.CheckBox1Click(Sender: TObject);
+procedure TFormResto.CheckBox1Click(Sender: TObject);
 begin
   if CheckBox1.Checked then
   begin
@@ -155,7 +156,7 @@ begin
   end;
 end;
 
-procedure TForm1.CheckBox2Click(Sender: TObject);
+procedure TFormResto.CheckBox2Click(Sender: TObject);
 begin
   if CheckBox2.Checked then
   begin
@@ -167,7 +168,7 @@ begin
   end;
 end;
 
-procedure TForm1.CheckBox3Click(Sender: TObject);
+procedure TFormResto.CheckBox3Click(Sender: TObject);
 begin
   if CheckBox3.Checked then
   begin
@@ -179,7 +180,7 @@ begin
   end;
 end;
 
-procedure TForm1.ComboBox1Change(Sender: TObject);
+procedure TFormResto.ComboBox1Change(Sender: TObject);
 begin
   if ComboBox1.ItemIndex = 0 then
   begin
@@ -219,13 +220,13 @@ begin
   Edit3.Text:= IntToStr(1);
 end;
 
-procedure TForm1.Edit3Change(Sender: TObject);
+procedure TFormResto.Edit3Change(Sender: TObject);
 begin
   HargaPorsi:= Harga*StrToCurr(Edit3.Text);
   Edit4.Text:= Format('Rp. %n', [HargaPorsi]);
 end;
 
-procedure TForm1.BitBtn1Click(Sender: TObject);
+procedure TFormResto.BitBtn1Click(Sender: TObject);
 begin
   if CheckBox1.Checked then
   begin

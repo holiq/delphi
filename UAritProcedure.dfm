@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormAritProcedure: TFormAritProcedure
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'FormAritProcedure'
   ClientHeight = 325
   ClientWidth = 712
   Color = clBtnFace

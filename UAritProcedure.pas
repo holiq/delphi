@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TFormAritProcedure = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
@@ -30,7 +30,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormAritProcedure: TFormAritProcedure;
   A1,A2: string;
   Ar:String;
 
@@ -38,7 +38,7 @@ implementation
 
 {$R *.dfm}
 
-procedure Tform1.HitungAritmatika (A1,A2, Operator :String);
+procedure TFormAritProcedure.HitungAritmatika (A1,A2, Operator :String);
 begin
   if Operator='+' then
   Edit3.Text:=FloatToStr(StrToIntDef(A1, 0)+StrToIntDef(A2, 0))
@@ -53,22 +53,22 @@ begin
   Edit3.Text:=FloatToStr(StrToIntDef(A1, 0)/StrToIntDef(A2, 0))
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TFormAritProcedure.Button1Click(Sender: TObject);
 begin
   HitungAritmatika(Edit1.Text, Edit2.Text, '+');
 end;
 
-procedure TForm1.Button2Click(Sender: TObject);
+procedure TFormAritProcedure.Button2Click(Sender: TObject);
 begin
   HitungAritmatika(Edit1.Text, Edit2.Text, '-');
 end;
 
-procedure TForm1.Button3Click(Sender: TObject);
+procedure TFormAritProcedure.Button3Click(Sender: TObject);
 begin
   HitungAritmatika(Edit1.Text, Edit2.Text, '*');
 end;
 
-procedure TForm1.Button4Click(Sender: TObject);
+procedure TFormAritProcedure.Button4Click(Sender: TObject);
 begin
   HitungAritmatika(Edit1.Text, Edit2.Text, '/');
 end;
