@@ -114,26 +114,6 @@
             <Form>FormGajiPokok</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="ULogin.pas">
-            <Form>UHome</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UCashboard.pas">
-            <Form>FormDashboard</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Ucart.pas">
-            <Form>FormCart</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Uorder.pas">
-            <Form>FormOrder</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="Ucheckout.pas">
-            <Form>FormCheckOut</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="UAritFunction.pas">
             <Form>FormAritFunction</Form>
             <FormType>dfm</FormType>
@@ -144,6 +124,26 @@
         </DCCReference>
         <DCCReference Include="UMinMax.pas">
             <Form>FormMinMax</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BukaLapak\Ucart.pas">
+            <Form>FormCart</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BukaLapak\UCashboard.pas">
+            <Form>FormDashboard</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BukaLapak\Ucheckout.pas">
+            <Form>FormCheckOut</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BukaLapak\ULogin.pas">
+            <Form>UHome</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="BukaLapak\Uorder.pas">
+            <Form>FormOrder</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

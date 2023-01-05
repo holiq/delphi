@@ -6,14 +6,14 @@ uses
   UAritProcedure in 'UAritProcedure.pas' {FormAritProcedure},
   UbangunRuang in 'UbangunRuang.pas' {FormBangunRuang},
   UGaji_Pokok in 'UGaji_Pokok.pas' {FormGajiPokok},
-  ULogin in 'ULogin.pas' {UHome},
-  UCashboard in 'UCashboard.pas' {FormDashboard},
-  Ucart in 'Ucart.pas' {FormCart},
-  Uorder in 'Uorder.pas' {FormOrder},
-  Ucheckout in 'Ucheckout.pas' {FormCheckOut},
   UAritFunction in 'UAritFunction.pas' {FormAritFunction},
   UResto in 'UResto.pas' {FormResto},
-  UMinMax in 'UMinMax.pas' {FormMinMax};
+  UMinMax in 'UMinMax.pas' {FormMinMax},
+  Ucart in 'BukaLapak\Ucart.pas' {FormCart},
+  UCashboard in 'BukaLapak\UCashboard.pas' {FormDashboard},
+  Ucheckout in 'BukaLapak\Ucheckout.pas' {FormCheckOut},
+  ULogin in 'BukaLapak\ULogin.pas' {UHome},
+  Uorder in 'BukaLapak\Uorder.pas' {FormOrder};
 
 {$R *.res}
 
@@ -24,13 +24,13 @@ begin
   Application.CreateForm(TFormAritProcedure, FormAritProcedure);
   Application.CreateForm(TFormBangunRuang, FormBangunRuang);
   Application.CreateForm(TFormGajiPokok, FormGajiPokok);
-  Application.CreateForm(TUHome, UHome);
-  Application.CreateForm(TFormDashboard, FormDashboard);
-  Application.CreateForm(TFormCart, FormCart);
-  Application.CreateForm(TFormOrder, FormOrder);
-  Application.CreateForm(TFormCheckOut, FormCheckOut);
   Application.CreateForm(TFormAritFunction, FormAritFunction);
   Application.CreateForm(TFormResto, FormResto);
   Application.CreateForm(TFormMinMax, FormMinMax);
+  Application.CreateForm(TFormCart, FormCart);
+  Application.CreateForm(TFormDashboard, FormDashboard);
+  Application.CreateForm(TFormCheckOut, FormCheckOut);
+  Application.CreateForm(TUHome, UHome);
+  Application.CreateForm(TFormOrder, FormOrder);
   Application.Run;
 end.
