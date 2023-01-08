@@ -19,8 +19,9 @@ type
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
     BitBtn8: TBitBtn;
-    OpenDialog1: TOpenDialog;
     BitBtn9: TBitBtn;
+    WebBrowser1: TWebBrowser;
+    BitBtn10: TBitBtn;
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
@@ -30,6 +31,7 @@ type
     procedure BitBtn7Click(Sender: TObject);
     procedure BitBtn8Click(Sender: TObject);
     procedure BitBtn9Click(Sender: TObject);
+    procedure BitBtn10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -84,13 +86,17 @@ end;
 procedure TFormPenggabungan.BitBtn8Click(Sender: TObject);
 begin
   //ShowMessage()     WebBrowser1.Navigate
-  //WebBrowser1.Navigate('https://repositori.unud.ac.id/protected/storage/upload/repositori/bfc0079ca952f2a7cec3936c5e0b996e.pdf');
-  ShellExecute(Handle, nil, PChar(OpenDialog1.FileName), nil, nil, SW_SHOWNORMAL);
+  WebBrowser1.Navigate('https://drive.google.com/file/d/1DFGtIYOUY1M7FzIUgO8sQZEwEPsNhn-m/view?usp=sharing');
 end;
 
 procedure TFormPenggabungan.BitBtn9Click(Sender: TObject);
 begin
   FormMinMax.Show;
+end;
+
+procedure TFormPenggabungan.BitBtn10Click(Sender: TObject);
+begin
+  ShellExecute(Handle, nil, PChar('https://drive.google.com/file/d/1DFGtIYOUY1M7FzIUgO8sQZEwEPsNhn-m/view?usp=sharing'), nil, nil, SW_SHOWNORMAL);
 end;
 
 end.

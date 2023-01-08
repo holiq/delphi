@@ -38,7 +38,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'E-COMMERS (UTAMA, LOGIN)'
         TabOrder = 0
         OnClick = BitBtn1Click
-        ExplicitTop = 150
       end
       object BitBtn2: TBitBtn
         Left = 0
@@ -49,7 +48,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'GAJI KARYAWAN (PERCABANGAN)'
         TabOrder = 1
         OnClick = BitBtn2Click
-        ExplicitTop = 125
       end
       object BitBtn3: TBitBtn
         Left = 0
@@ -60,7 +58,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'RUMUS BANGUN RUANG'
         TabOrder = 2
         OnClick = BitBtn3Click
-        ExplicitTop = 100
       end
       object BitBtn4: TBitBtn
         Left = 0
@@ -71,7 +68,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'ARITMATIKA (FUNCTION)'
         TabOrder = 3
         OnClick = BitBtn4Click
-        ExplicitTop = 75
       end
       object BitBtn5: TBitBtn
         Left = 0
@@ -82,7 +78,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'ARITMATIKA (PROCEDURE)'
         TabOrder = 4
         OnClick = BitBtn5Click
-        ExplicitTop = 50
       end
       object BitBtn6: TBitBtn
         Left = 0
@@ -93,7 +88,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'RESTORAN'
         TabOrder = 5
         OnClick = BitBtn6Click
-        ExplicitTop = 25
       end
       object BitBtn7: TBitBtn
         Left = 0
@@ -104,7 +98,6 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'PERULANGAN'
         TabOrder = 6
         OnClick = BitBtn7Click
-        ExplicitTop = 0
       end
       object BitBtn9: TBitBtn
         Left = 0
@@ -115,24 +108,39 @@ object FormPenggabungan: TFormPenggabungan
         Caption = 'MIN-MAX (ARRAY)'
         TabOrder = 7
         OnClick = BitBtn9Click
-        ExplicitTop = 8
       end
     end
   end
   object BitBtn8: TBitBtn
-    Left = 216
-    Top = 8
-    Width = 75
+    Left = 200
+    Top = 0
+    Width = 209
     Height = 25
+    Align = alCustom
     Caption = 'Buka PDF'
     TabOrder = 1
     OnClick = BitBtn8Click
   end
-  object OpenDialog1: TOpenDialog
-    FileName = 
-      'C:\Users\Holiq Ibrahim\Documents\Embarcadero\Studio\Projects\pdf' +
-      '\UAS.pdf'
-    Left = 304
-    Top = 8
+  object WebBrowser1: TWebBrowser
+    Left = 206
+    Top = 31
+    Width = 410
+    Height = 438
+    TabOrder = 2
+    ControlData = {
+      4C000000602A0000452D00000000000000000000000000000000000000000000
+      000000004C000000000000000000000001000000E0D057007335CF11AE690800
+      2B2E126208000000000000004C0000000114020000000000C000000000000046
+      8000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000100000000000000000000000000000000000000}
+  end
+  object BitBtn10: TBitBtn
+    Left = 408
+    Top = 0
+    Width = 216
+    Height = 25
+    Caption = 'Buka di Browser'
+    TabOrder = 3
+    OnClick = BitBtn10Click
   end
 end
