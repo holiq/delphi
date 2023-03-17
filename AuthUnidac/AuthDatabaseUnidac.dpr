@@ -1,4 +1,4 @@
-﻿program AuthDatabase;
+﻿program AuthDatabaseUnidac;
 
 uses
   Vcl.Forms,
