@@ -1,9 +1,9 @@
-object Form2: TForm2
+object FormMainMenu: TFormMainMenu
   Left = 0
   Top = 0
   Caption = 'FormMainMenu'
-  ClientHeight = 186
-  ClientWidth = 418
+  ClientHeight = 334
+  ClientWidth = 717
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
 
 type
-  TForm2 = class(TForm)
+  TFormMainMenu = class(TForm)
     MainMenu1: TMainMenu;
     File1: TMenuItem;
     File2: TMenuItem;
@@ -20,7 +20,7 @@ type
   end;
 
 var
-  Form2: TForm2;
+  FormMainMenu: TFormMainMenu;
 
 implementation
 
@@ -28,12 +28,12 @@ implementation
 
 uses ULogin;
 
-procedure TForm2.File2Click(Sender: TObject);
+procedure TFormMainMenu.File2Click(Sender: TObject);
 begin
   Application.Terminate;
 end;
 
-procedure TForm2.FormShow(Sender: TObject);
+procedure TFormMainMenu.FormShow(Sender: TObject);
 begin
   Application.CreateForm(TFormLogin, FormLogin);
   FormLogin.Show;
