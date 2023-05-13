@@ -1,11 +1,13 @@
-﻿program AuthFiredac;
+﻿program Tokoku;
 
 uses
   Vcl.Forms,
   ULogin in 'ULogin.pas' {FormLogin},
-  UMainMenu in 'UMainMenu.pas' {Form2},
+  UMainMenu in 'UMainMenu.pas' {FormMainMenu},
   UFunctionLogin in 'UFunctionLogin.pas',
-  UDataModule in 'UDataModule.pas' {DataModule1: TDataModule};
+  UDataModule in 'UDataModule.pas' {DataModule1: TDataModule},
+  UBarang in 'Barang\UBarang.pas' {FormBarang},
+  UAddEditBarang in 'Barang\UAddEditBarang.pas' {FormAddEditBarang};
 
 {$R *.res}
 
