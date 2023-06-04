@@ -32,7 +32,7 @@ uses UFunctionLogin, UDataModule;
 
 procedure TFormLogin.BitBtn1Click(Sender: TObject);
 begin
-    username:= Trim(Edit1.Text);
+  username:= Trim(Edit1.Text);
   password:= getmd5(Edit2.Text);
 
   with DataModule1.QTemp do
