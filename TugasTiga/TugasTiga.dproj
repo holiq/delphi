@@ -130,6 +130,26 @@
             <Form>FListPelanggan</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Pelanggan\UAddPelanggan.pas">
+            <Form>FAddPelanggan</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Pelanggan\UEditPelanggan.pas">
+            <Form>FEditPelanggan</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Supplier\UListSupplier.pas">
+            <Form>FListSupplier</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Supplier\UAddSupplier.pas">
+            <Form>FAddSupplier</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Supplier\UEditSupplier.pas">
+            <Form>FEditSupplier</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

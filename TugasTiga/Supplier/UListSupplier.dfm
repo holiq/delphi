@@ -1,9 +1,9 @@
-object FListBarang: TFListBarang
+object FListSupplier: TFListSupplier
   Left = 0
   Top = 0
-  Caption = 'FListBarang'
-  ClientHeight = 330
-  ClientWidth = 708
+  Caption = 'FListSupplier'
+  ClientHeight = 364
+  ClientWidth = 711
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,12 +16,12 @@ object FListBarang: TFListBarang
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 708
+    Width = 711
     Height = 41
     Align = alTop
     TabOrder = 0
     object Splitter1: TSplitter
-      Left = 79
+      Left = 1
       Top = 1
       Height = 39
       ExplicitLeft = 72
@@ -29,14 +29,14 @@ object FListBarang: TFListBarang
       ExplicitHeight = 100
     end
     object Splitter2: TSplitter
-      Left = 157
+      Left = 79
       Top = 1
       Height = 39
       ExplicitLeft = 148
       ExplicitTop = 0
     end
     object Splitter3: TSplitter
-      Left = 235
+      Left = 157
       Top = 1
       Height = 39
       ExplicitLeft = 232
@@ -44,16 +44,17 @@ object FListBarang: TFListBarang
       ExplicitHeight = 100
     end
     object Splitter4: TSplitter
+      Left = 235
+      Top = 1
+      Height = 39
+      ExplicitLeft = 226
+      ExplicitTop = 2
+    end
+    object Splitter5: TSplitter
       Left = 313
       Top = 1
       Height = 39
       ExplicitLeft = 301
-      ExplicitTop = 0
-    end
-    object Splitter5: TSplitter
-      Left = 1
-      Top = 1
-      Height = 39
       ExplicitTop = 2
     end
     object BitBtn1: TBitBtn
@@ -65,10 +66,9 @@ object FListBarang: TFListBarang
       Caption = 'Exit'
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 313
     end
     object BitBtn2: TBitBtn
-      Left = 238
+      Left = 160
       Top = 1
       Width = 75
       Height = 39
@@ -76,10 +76,9 @@ object FListBarang: TFListBarang
       Caption = 'Refresh'
       TabOrder = 1
       OnClick = BitBtn2Click
-      ExplicitLeft = 235
     end
     object BitBtn3: TBitBtn
-      Left = 160
+      Left = 82
       Top = 1
       Width = 75
       Height = 39
@@ -87,10 +86,9 @@ object FListBarang: TFListBarang
       Caption = 'Hapus'
       TabOrder = 2
       OnClick = BitBtn3Click
-      ExplicitLeft = 157
     end
     object BitBtn4: TBitBtn
-      Left = 82
+      Left = 4
       Top = 1
       Width = 75
       Height = 39
@@ -98,10 +96,9 @@ object FListBarang: TFListBarang
       Caption = 'Edit'
       TabOrder = 3
       OnClick = BitBtn4Click
-      ExplicitLeft = 79
     end
     object BitBtn5: TBitBtn
-      Left = 4
+      Left = 238
       Top = 1
       Width = 75
       Height = 39
@@ -109,14 +106,13 @@ object FListBarang: TFListBarang
       Caption = 'Tambah'
       TabOrder = 4
       OnClick = BitBtn5Click
-      ExplicitLeft = 1
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 41
-    Width = 708
-    Height = 289
+    Width = 711
+    Height = 323
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -133,54 +129,54 @@ object FListBarang: TFListBarang
       end
       item
         Expanded = False
-        FieldName = 'nama_barang'
+        FieldName = 'nama'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'stok_barang'
+        FieldName = 'alamat'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'harga_barang'
+        FieldName = 'no_telepon'
         Visible = True
       end>
   end
-  object QBarang: TFDQuery
+  object QSupplier: TFDQuery
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
-      'SELECT * FROM barang')
-    Left = 192
-    Top = 160
-    object QBarangid: TFDAutoIncField
+      'SELECT * FROM supplier')
+    Left = 264
+    Top = 125
+    object QSupplierid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object QBarangnama_barang: TStringField
-      FieldName = 'nama_barang'
-      Origin = 'nama_barang'
+    object QSuppliernama: TStringField
+      FieldName = 'nama'
+      Origin = 'nama'
       Required = True
       Size = 255
     end
-    object QBarangstok_barang: TStringField
-      FieldName = 'stok_barang'
-      Origin = 'stok_barang'
+    object QSupplieralamat: TMemoField
+      FieldName = 'alamat'
+      Origin = 'alamat'
       Required = True
-      Size = 255
+      BlobType = ftMemo
     end
-    object QBarangharga_barang: TStringField
-      FieldName = 'harga_barang'
-      Origin = 'harga_barang'
+    object QSupplierno_telepon: TStringField
+      FieldName = 'no_telepon'
+      Origin = 'no_telepon'
       Required = True
       Size = 255
     end
   end
   object DataSource1: TDataSource
-    DataSet = QBarang
-    Left = 296
-    Top = 160
+    DataSet = QSupplier
+    Left = 368
+    Top = 125
   end
 end

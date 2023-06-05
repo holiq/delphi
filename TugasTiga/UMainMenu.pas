@@ -17,6 +17,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure Barang1Click(Sender: TObject);
     procedure Pelanggan1Click(Sender: TObject);
+    procedure Suppplier1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,7 +31,7 @@ implementation
 
 {$R *.dfm}
 
-uses ULogin, UListBarang, UListPelanggan;
+uses ULogin, UListBarang, UListPelanggan, UListSupplier;
 
 procedure TFMainMenu.Barang1Click(Sender: TObject);
 begin
@@ -44,6 +45,12 @@ begin
   Application.CreateForm(TFListPelanggan, FListPelanggan);
   FListPelanggan.ShowModal;
   FListPelanggan.Free;
+end;
+
+procedure TFMainMenu.Suppplier1Click(Sender: TObject);
+begin
+  Application.CreateForm(TFListSupplier, FListSupplier);
+  FListSupplier.Show;
 end;
 
 procedure TFMainMenu.FormShow(Sender: TObject);

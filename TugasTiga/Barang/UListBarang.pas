@@ -28,6 +28,7 @@ type
     QBarangnama_barang: TStringField;
     QBarangstok_barang: TStringField;
     QBarangharga_barang: TStringField;
+    Splitter5: TSplitter;
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
