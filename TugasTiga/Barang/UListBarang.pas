@@ -12,7 +12,6 @@ uses
 type
   TFListBarang = class(TForm)
     Panel1: TPanel;
-    BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
@@ -20,20 +19,28 @@ type
     Splitter1: TSplitter;
     Splitter2: TSplitter;
     Splitter3: TSplitter;
-    Splitter4: TSplitter;
     DBGrid1: TDBGrid;
     QBarang: TFDQuery;
     DataSource1: TDataSource;
-    QBarangid: TFDAutoIncField;
-    QBarangnama_barang: TStringField;
-    QBarangstok_barang: TStringField;
-    QBarangharga_barang: TStringField;
     Splitter5: TSplitter;
+    QBarangid: TFDAutoIncField;
+    QBarangkode_barang: TStringField;
+    QBarangnama_barang: TStringField;
+    QBarangdeskripsi: TMemoField;
+    QBarangsatuan: TStringField;
+    QBarangstok_awal: TStringField;
+    QBarangstok_minimal: TStringField;
+    QBarangharga_barang: TStringField;
+    QBarangis_active: TShortintField;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Edit1: TEdit;
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,7 +54,7 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UAddBarang, UEditBarang;
+uses UDataModule, UAddBarang, UEditBarang, UFunction;
 
 procedure TFListBarang.BitBtn1Click(Sender: TObject);
 begin
@@ -64,6 +71,9 @@ end;
 
 procedure TFListBarang.BitBtn3Click(Sender: TObject);
 begin
+  if Application.MessageBox('Apakah yakin menghapus data tersebut?',
+  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+  begin
   with DataModule1.QTemp do
   begin
     Close;
@@ -73,14 +83,24 @@ begin
     Execute;
   end;
   BitBtn2.Click;
+  end;
 end;
 
 procedure TFListBarang.BitBtn4Click(Sender: TObject);
 begin
   Application.CreateForm(TFEditBarang, FEditBarang);
-  FEditBarang.Edit1.Text:= QBarangnama_barang.AsString;
-  FEditBarang.Edit2.Text:= QBarangstok_barang.AsString;
-  FEditBarang.Edit3.Text:= QBarangharga_barang.AsString;
+  FEditBarang.Edit1.Text:= QBarangkode_barang.AsString;
+  FEditBarang.Edit2.Text:= QBarangnama_barang.AsString;
+  FEditBarang.Edit3.Text:= QBarangdeskripsi.AsString;
+  FEditBarang.ComboBox1.Text:= QBarangsatuan.AsString;
+  FEditBarang.Edit4.Text:= QBarangstok_awal.AsString;
+  FEditBarang.Edit5.Text:= QBarangstok_minimal.AsString;
+  FEditBarang.Edit6.Text:= QBarangharga_barang.AsString;
+  if QBarangis_active.AsInteger=1 then
+  begin
+    FEditBarang.CheckBox1.Checked;
+  end;
+
   FEditBarang.Label5.Caption:= QBarangid.AsString;
   FEditBarang.ShowModal;
   FEditBarang.Free;
@@ -89,8 +109,21 @@ end;
 procedure TFListBarang.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddBarang, FAddBarang);
+  FAddBarang.Edit1.Text:= Autokode('kode_barang', 'barang', 'BR');
   FAddBarang.ShowModal;
   FAddBarang.Free;
+end;
+
+procedure TFListBarang.Edit1Change(Sender: TObject);
+begin
+  QBarang.MacroByName('WHERE').Value:= 'WHERE nama_barang LIKE '+QuotedStr('%'+Edit1.Text+'%');
+   QBarang.Close;
+   QBarang.Open;
+//  if QBarang.Active then
+//    QBarang.Refresh
+//  else
+//    QBarang.Open;
+
 end;
 
 end.

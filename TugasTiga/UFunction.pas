@@ -6,11 +6,39 @@ interface
     DateUtils, UDataModule;
 
 function getmd5(SourceString: string): string;
+function Autokode(Kolom,Tabel,KodeAwal : string): string;
 
 var
-  username,	password: string;
+  username,	password, kode: string;
+  urut, isActive: Integer;
 
 implementation
+
+function Autokode(Kolom,Tabel,KodeAwal : string): string;
+begin
+  with DataModule1.QTemp do
+  begin
+    Close;
+    SQL.Clear;
+    SQL.Text:='select '+Kolom+' from '+Tabel+' ';
+    Open;
+  end;
+  if DataModule1.QTemp.RecordCount = 0 then urut :=1 else
+  if DataModule1.QTemp.RecordCount > 0 then
+  begin
+    with DataModule1.Qtemp do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Text:='select max(right('+Kolom+',4)) as kode from '+Tabel+' ';
+      Open;
+    end;
+    urut:=DataModule1.Qtemp.FieldByName('kode').AsInteger +1;
+  end;
+  kode:=inttostr(urut);
+  kode:=KodeAwal+Copy('000'+kode,length('000'+kode)-4,5);
+  Result := kode;
+end;
 
 (* function read html5*)
 function getmd5(SourceString: string): string;

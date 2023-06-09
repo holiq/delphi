@@ -16,7 +16,6 @@ type
     Splitter2: TSplitter;
     Splitter3: TSplitter;
     Splitter4: TSplitter;
-    BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
@@ -28,7 +27,6 @@ type
     QPelanggannama: TStringField;
     QPelangganalamat: TMemoField;
     QPelangganno_telepon: TStringField;
-    Splitter5: TSplitter;
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
@@ -64,6 +62,9 @@ end;
 
 procedure TFListPelanggan.BitBtn3Click(Sender: TObject);
 begin
+  if Application.MessageBox('Apakah yakin menghapus data tersebut?',
+  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+  begin
   with DataModule1.QTemp do
   begin
     Close;
@@ -73,6 +74,7 @@ begin
     Execute;
   end;
   BitBtn2.Click;
+  end;
 end;
 
 procedure TFListPelanggan.BitBtn4Click(Sender: TObject);

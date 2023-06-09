@@ -10,8 +10,6 @@ object FormLogin: TFormLogin
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Login: TLabel
     Left = 312
@@ -45,6 +43,7 @@ object FormLogin: TFormLogin
     Top = 175
     Width = 121
     Height = 21
+    PasswordChar = '*'
     TabOrder = 0
   end
   object Edit1: TEdit

@@ -10,8 +10,6 @@ object FListPelanggan: TFListPelanggan
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -20,9 +18,9 @@ object FListPelanggan: TFListPelanggan
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 800
+    ExplicitWidth = 690
     object Splitter1: TSplitter
-      Left = 1
+      Left = 76
       Top = 1
       Height = 39
       ExplicitLeft = 72
@@ -30,83 +28,69 @@ object FListPelanggan: TFListPelanggan
       ExplicitHeight = 100
     end
     object Splitter2: TSplitter
-      Left = 79
+      Left = 154
       Top = 1
       Height = 39
       ExplicitLeft = 148
       ExplicitTop = 0
     end
     object Splitter3: TSplitter
-      Left = 157
+      Left = 232
       Top = 1
       Height = 39
-      ExplicitLeft = 232
       ExplicitTop = 32
       ExplicitHeight = 100
     end
     object Splitter4: TSplitter
-      Left = 235
+      Left = 310
       Top = 1
       Height = 39
       ExplicitLeft = 226
       ExplicitTop = 2
     end
-    object Splitter5: TSplitter
-      Left = 313
-      Top = 1
-      Height = 39
-      ExplicitLeft = 301
-      ExplicitTop = 2
-    end
-    object BitBtn1: TBitBtn
-      Left = 316
-      Top = 1
-      Width = 75
-      Height = 39
-      Align = alLeft
-      Caption = 'Exit'
-      TabOrder = 0
-      OnClick = BitBtn1Click
-    end
     object BitBtn2: TBitBtn
-      Left = 160
+      Left = 235
       Top = 1
       Width = 75
       Height = 39
       Align = alLeft
       Caption = 'Refresh'
-      TabOrder = 1
+      TabOrder = 0
       OnClick = BitBtn2Click
+      ExplicitLeft = 160
     end
     object BitBtn3: TBitBtn
-      Left = 82
+      Left = 157
       Top = 1
       Width = 75
       Height = 39
       Align = alLeft
       Caption = 'Hapus'
-      TabOrder = 2
+      TabOrder = 1
       OnClick = BitBtn3Click
+      ExplicitLeft = 82
     end
     object BitBtn4: TBitBtn
-      Left = 4
+      Left = 79
       Top = 1
       Width = 75
       Height = 39
       Align = alLeft
       Caption = 'Edit'
-      TabOrder = 3
+      TabOrder = 2
       OnClick = BitBtn4Click
+      ExplicitLeft = 4
     end
     object BitBtn5: TBitBtn
-      Left = 238
+      Left = 1
       Top = 1
       Width = 75
       Height = 39
       Align = alLeft
       Caption = 'Tambah'
-      TabOrder = 4
+      TabOrder = 3
       OnClick = BitBtn5Click
+      ExplicitLeft = -2
     end
   end
   object DBGrid1: TDBGrid

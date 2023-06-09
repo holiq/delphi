@@ -2,8 +2,8 @@ object FMainMenu: TFMainMenu
   Left = 0
   Top = 0
   Caption = 'FMainMenu'
-  ClientHeight = 348
-  ClientWidth = 740
+  ClientHeight = 466
+  ClientWidth = 945
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,10 +11,8 @@ object FMainMenu: TFMainMenu
   Font.Name = 'Tahoma'
   Font.Style = []
   Menu = MainMenu1
-  OldCreateOrder = False
   WindowState = wsMaximized
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object MainMenu1: TMainMenu
     Left = 24

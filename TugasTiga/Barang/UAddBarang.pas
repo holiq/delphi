@@ -16,6 +16,15 @@ type
     Label3: TLabel;
     Label4: TLabel;
     BitBtn1: TBitBtn;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Label8: TLabel;
+    ComboBox1: TComboBox;
+    CheckBox1: TCheckBox;
     procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
@@ -30,17 +39,22 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListBarang;
+uses UDataModule, UListBarang, UFunction;
 
 procedure TFAddBarang.BitBtn1Click(Sender: TObject);
 begin
+  if CheckBox1.Checked then
+    isActive:= 1
+  else
+    isActive:= 0;
+
   with DataModule1.QTemp do
   begin
     Close;
     SQL.Clear;
     SQL.Text:= 'INSERT INTO tugas_tiga.barang '+
-    '(nama_barang, stok_barang, harga_barang) VALUES ('+
-      QuotedStr(Edit1.Text)+','+QuotedStr(Edit2.Text)+','+QuotedStr(Edit3.Text)+
+    '(kode_barang, nama_barang, deskripsi, satuan, stok_awal, stok_minimal,	harga_barang,	is_active) VALUES ('+
+      QuotedStr(Edit1.Text)+','+QuotedStr(Edit2.Text)+','+QuotedStr(Edit3.Text)+','+QuotedStr(ComboBox1.Text)+','+QuotedStr(Edit4.Text)+','+QuotedStr(Edit5.Text)+','+QuotedStr(Edit6.Text)+','+IntToStr(isActive)+
     ')';
     Execute;
   end;

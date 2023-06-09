@@ -10,8 +10,6 @@ object FListBarang: TFListBarang
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -20,6 +18,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 0
+    ExplicitWidth = 698
     object Splitter1: TSplitter
       Left = 79
       Top = 1
@@ -43,29 +42,11 @@ object FListBarang: TFListBarang
       ExplicitTop = 32
       ExplicitHeight = 100
     end
-    object Splitter4: TSplitter
-      Left = 313
-      Top = 1
-      Height = 39
-      ExplicitLeft = 301
-      ExplicitTop = 0
-    end
     object Splitter5: TSplitter
       Left = 1
       Top = 1
       Height = 39
       ExplicitTop = 2
-    end
-    object BitBtn1: TBitBtn
-      Left = 316
-      Top = 1
-      Width = 75
-      Height = 39
-      Align = alLeft
-      Caption = 'Exit'
-      TabOrder = 0
-      OnClick = BitBtn1Click
-      ExplicitLeft = 313
     end
     object BitBtn2: TBitBtn
       Left = 238
@@ -74,9 +55,8 @@ object FListBarang: TFListBarang
       Height = 39
       Align = alLeft
       Caption = 'Refresh'
-      TabOrder = 1
+      TabOrder = 0
       OnClick = BitBtn2Click
-      ExplicitLeft = 235
     end
     object BitBtn3: TBitBtn
       Left = 160
@@ -85,9 +65,8 @@ object FListBarang: TFListBarang
       Height = 39
       Align = alLeft
       Caption = 'Hapus'
-      TabOrder = 2
+      TabOrder = 1
       OnClick = BitBtn3Click
-      ExplicitLeft = 157
     end
     object BitBtn4: TBitBtn
       Left = 82
@@ -96,9 +75,8 @@ object FListBarang: TFListBarang
       Height = 39
       Align = alLeft
       Caption = 'Edit'
-      TabOrder = 3
+      TabOrder = 2
       OnClick = BitBtn4Click
-      ExplicitLeft = 79
     end
     object BitBtn5: TBitBtn
       Left = 4
@@ -107,16 +85,15 @@ object FListBarang: TFListBarang
       Height = 39
       Align = alLeft
       Caption = 'Tambah'
-      TabOrder = 4
+      TabOrder = 3
       OnClick = BitBtn5Click
-      ExplicitLeft = 1
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 41
+    Top = 82
     Width = 708
-    Height = 289
+    Height = 248
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -133,31 +110,97 @@ object FListBarang: TFListBarang
       end
       item
         Expanded = False
+        FieldName = 'kode_barang'
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'nama_barang'
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'stok_barang'
+        FieldName = 'deskripsi'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'satuan'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'stok_awal'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'stok_minimal'
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'harga_barang'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'is_active'
+        Visible = True
       end>
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 41
+    Width = 708
+    Height = 41
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 698
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 26
+      Height = 33
+      Align = alLeft
+      Caption = 'Cari: '
+      Layout = tlCenter
+      ExplicitHeight = 13
+    end
+    object Edit1: TEdit
+      Left = 36
+      Top = 11
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      OnChange = Edit1Change
+    end
   end
   object QBarang: TFDQuery
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
-      'SELECT * FROM barang')
+      'SELECT * FROM barang'
+      '&WHERE ')
     Left = 192
     Top = 160
+    MacroData = <
+      item
+        Value = Null
+        Name = 'WHERE'
+        DataType = mdIdentifier
+      end>
     object QBarangid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
+    end
+    object QBarangkode_barang: TStringField
+      FieldName = 'kode_barang'
+      Origin = 'kode_barang'
+      Required = True
+      Size = 255
     end
     object QBarangnama_barang: TStringField
       FieldName = 'nama_barang'
@@ -165,9 +208,27 @@ object FListBarang: TFListBarang
       Required = True
       Size = 255
     end
-    object QBarangstok_barang: TStringField
-      FieldName = 'stok_barang'
-      Origin = 'stok_barang'
+    object QBarangdeskripsi: TMemoField
+      FieldName = 'deskripsi'
+      Origin = 'deskripsi'
+      Required = True
+      BlobType = ftMemo
+    end
+    object QBarangsatuan: TStringField
+      FieldName = 'satuan'
+      Origin = 'satuan'
+      Required = True
+      Size = 255
+    end
+    object QBarangstok_awal: TStringField
+      FieldName = 'stok_awal'
+      Origin = 'stok_awal'
+      Required = True
+      Size = 255
+    end
+    object QBarangstok_minimal: TStringField
+      FieldName = 'stok_minimal'
+      Origin = 'stok_minimal'
       Required = True
       Size = 255
     end
@@ -176,6 +237,11 @@ object FListBarang: TFListBarang
       Origin = 'harga_barang'
       Required = True
       Size = 255
+    end
+    object QBarangis_active: TShortintField
+      FieldName = 'is_active'
+      Origin = 'is_active'
+      Required = True
     end
   end
   object DataSource1: TDataSource
