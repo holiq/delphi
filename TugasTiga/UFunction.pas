@@ -6,38 +6,41 @@ interface
     DateUtils, UDataModule;
 
 function getmd5(SourceString: string): string;
-function Autokode(Kolom,Tabel,KodeAwal : string): string;
+function AutoCode(Column, TableName, Prefix: string): string;
 
 var
   username,	password, kode: string;
-  urut, isActive: Integer;
+  sort, isActive: Integer;
 
 implementation
 
-function Autokode(Kolom,Tabel,KodeAwal : string): string;
+function AutoCode(Column, TableName, Prefix: string): string;
 begin
   with DataModule1.QTemp do
   begin
     Close;
     SQL.Clear;
-    SQL.Text:='select '+Kolom+' from '+Tabel+' ';
+    SQL.Text:='select '+Column+' from '+TableName+' ';
     Open;
   end;
-  if DataModule1.QTemp.RecordCount = 0 then urut :=1 else
+
+  if DataModule1.QTemp.RecordCount = 0 then sort :=1 else
   if DataModule1.QTemp.RecordCount > 0 then
   begin
     with DataModule1.Qtemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:='select max(right('+Kolom+',4)) as kode from '+Tabel+' ';
+      SQL.Text:='select max(right('+Column+',4)) as kode from '+TableName+' ';
       Open;
     end;
-    urut:=DataModule1.Qtemp.FieldByName('kode').AsInteger +1;
+
+    sort:=DataModule1.Qtemp.FieldByName('kode').AsInteger +1;
   end;
-  kode:=inttostr(urut);
-  kode:=KodeAwal+Copy('000'+kode,length('000'+kode)-4,5);
-  Result := kode;
+
+  kode:= IntToStr(sort);
+  kode:= Prefix+Copy('000'+kode,length('000'+kode)-4,5);
+  Result:= kode;
 end;
 
 (* function read html5*)

@@ -2,8 +2,8 @@ object FListPelanggan: TFListPelanggan
   Left = 0
   Top = 0
   Caption = 'FListPelanggan'
-  ClientHeight = 394
-  ClientWidth = 700
+  ClientHeight = 362
+  ClientWidth = 708
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,42 +14,40 @@ object FListPelanggan: TFListPelanggan
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 700
+    Width = 708
     Height = 41
     Align = alTop
     TabOrder = 0
     ExplicitWidth = 690
     object Splitter1: TSplitter
-      Left = 76
+      Left = 1
       Top = 1
       Height = 39
-      ExplicitLeft = 72
-      ExplicitTop = 8
-      ExplicitHeight = 100
+      ExplicitTop = 2
     end
     object Splitter2: TSplitter
-      Left = 154
+      Left = 79
       Top = 1
       Height = 39
-      ExplicitLeft = 148
-      ExplicitTop = 0
+      ExplicitLeft = 70
+      ExplicitTop = 2
     end
     object Splitter3: TSplitter
-      Left = 232
+      Left = 157
       Top = 1
       Height = 39
-      ExplicitTop = 32
-      ExplicitHeight = 100
+      ExplicitLeft = 136
+      ExplicitTop = -4
     end
     object Splitter4: TSplitter
-      Left = 310
+      Left = 235
       Top = 1
       Height = 39
       ExplicitLeft = 226
-      ExplicitTop = 2
+      ExplicitTop = -4
     end
     object BitBtn2: TBitBtn
-      Left = 235
+      Left = 238
       Top = 1
       Width = 75
       Height = 39
@@ -57,10 +55,10 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Refresh'
       TabOrder = 0
       OnClick = BitBtn2Click
-      ExplicitLeft = 160
+      ExplicitLeft = 235
     end
     object BitBtn3: TBitBtn
-      Left = 157
+      Left = 160
       Top = 1
       Width = 75
       Height = 39
@@ -68,10 +66,10 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Hapus'
       TabOrder = 1
       OnClick = BitBtn3Click
-      ExplicitLeft = 82
+      ExplicitLeft = 157
     end
     object BitBtn4: TBitBtn
-      Left = 79
+      Left = 82
       Top = 1
       Width = 75
       Height = 39
@@ -79,10 +77,11 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Edit'
       TabOrder = 2
       OnClick = BitBtn4Click
-      ExplicitLeft = 4
+      ExplicitLeft = 154
+      ExplicitTop = -4
     end
     object BitBtn5: TBitBtn
-      Left = 1
+      Left = 4
       Top = 1
       Width = 75
       Height = 39
@@ -90,14 +89,14 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Tambah'
       TabOrder = 3
       OnClick = BitBtn5Click
-      ExplicitLeft = -2
+      ExplicitLeft = 1
     end
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 41
-    Width = 700
-    Height = 353
+    Top = 82
+    Width = 708
+    Height = 280
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -110,6 +109,11 @@ object FListPelanggan: TFListPelanggan
       item
         Expanded = False
         FieldName = 'id'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kode_pelanggan'
         Visible = True
       end
       item
@@ -128,16 +132,58 @@ object FListPelanggan: TFListPelanggan
         Visible = True
       end>
   end
+  object Panel2: TPanel
+    Left = 0
+    Top = 41
+    Width = 708
+    Height = 41
+    Align = alTop
+    TabOrder = 2
+    ExplicitLeft = -8
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 26
+      Height = 33
+      Align = alLeft
+      Caption = 'Cari: '
+      Layout = tlCenter
+      ExplicitHeight = 13
+    end
+    object Edit1: TEdit
+      Left = 36
+      Top = 11
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      OnChange = Edit1Change
+    end
+  end
   object QPelanggan: TFDQuery
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
-      'SELECT * FROM pelanggan')
+      'SELECT * FROM pelanggan'
+      '&WHERE')
     Left = 264
     Top = 125
-    object QPelangganid: TIntegerField
+    MacroData = <
+      item
+        Value = Null
+        Name = 'WHERE'
+        DataType = mdIdentifier
+      end>
+    object QPelangganid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object QPelanggankode_pelanggan: TStringField
+      FieldName = 'kode_pelanggan'
+      Origin = 'kode_pelanggan'
       Required = True
+      Size = 255
     end
     object QPelanggannama: TStringField
       FieldName = 'nama'

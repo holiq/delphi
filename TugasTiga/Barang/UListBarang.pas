@@ -109,21 +109,23 @@ end;
 procedure TFListBarang.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddBarang, FAddBarang);
-  FAddBarang.Edit1.Text:= Autokode('kode_barang', 'barang', 'BR');
+  FAddBarang.Edit1.Text:= AutoCode('kode_barang', 'barang', 'BR');
   FAddBarang.ShowModal;
   FAddBarang.Free;
 end;
 
 procedure TFListBarang.Edit1Change(Sender: TObject);
 begin
-  QBarang.MacroByName('WHERE').Value:= 'WHERE nama_barang LIKE '+QuotedStr('%'+Edit1.Text+'%');
-   QBarang.Close;
-   QBarang.Open;
-//  if QBarang.Active then
-//    QBarang.Refresh
-//  else
-//    QBarang.Open;
-
+  QBarang.MacroByName('WHERE').Value:= ' WHERE users.kode_barang LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
+    QuotedStr('%'+Edit1.Text+'%');
+  QBarang.Open;
+  while not QBarang.Eof do
+  begin
+    QBarang.Refresh;
+    QBarang.Next;
+  end;
 end;
 
 end.

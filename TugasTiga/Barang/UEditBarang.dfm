@@ -12,7 +12,7 @@ object FEditBarang: TFEditBarang
   Font.Style = []
   TextHeight = 13
   object Label1: TLabel
-    Left = 242
+    Left = 257
     Top = 32
     Width = 98
     Height = 23
@@ -25,7 +25,7 @@ object FEditBarang: TFEditBarang
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 366
+    Left = 371
     Top = 32
     Width = 20
     Height = 23
@@ -38,49 +38,49 @@ object FEditBarang: TFEditBarang
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 256
+    Left = 258
     Top = 77
     Width = 61
     Height = 13
     Caption = 'Kode Barang'
   end
   object Label3: TLabel
-    Left = 256
+    Left = 258
     Top = 125
     Width = 64
     Height = 13
     Caption = 'Nama Barang'
   end
   object Label4: TLabel
-    Left = 256
+    Left = 258
     Top = 176
     Width = 42
     Height = 13
     Caption = 'Deskripsi'
   end
   object Label6: TLabel
-    Left = 256
+    Left = 258
     Top = 270
     Width = 47
     Height = 13
     Caption = 'Stok Awal'
   end
   object Label7: TLabel
-    Left = 256
+    Left = 258
     Top = 318
     Width = 64
     Height = 13
     Caption = 'Stok Mininmal'
   end
   object Label8: TLabel
-    Left = 256
+    Left = 258
     Top = 369
     Width = 66
     Height = 13
     Caption = 'Harga Barang'
   end
   object Label9: TLabel
-    Left = 257
+    Left = 258
     Top = 224
     Width = 34
     Height = 13
@@ -96,49 +96,49 @@ object FEditBarang: TFEditBarang
     OnClick = BitBtn1Click
   end
   object Edit1: TEdit
-    Left = 256
+    Left = 258
     Top = 96
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object Edit2: TEdit
-    Left = 256
+    Left = 258
     Top = 144
     Width = 121
     Height = 21
     TabOrder = 2
   end
   object Edit3: TEdit
-    Left = 256
+    Left = 258
     Top = 195
     Width = 121
     Height = 21
     TabOrder = 3
   end
   object Edit4: TEdit
-    Left = 256
+    Left = 258
     Top = 289
     Width = 121
     Height = 21
     TabOrder = 4
   end
   object Edit5: TEdit
-    Left = 256
+    Left = 258
     Top = 337
     Width = 121
     Height = 21
     TabOrder = 5
   end
   object Edit6: TEdit
-    Left = 256
+    Left = 258
     Top = 388
     Width = 121
     Height = 21
     TabOrder = 6
   end
   object ComboBox1: TComboBox
-    Left = 256
+    Left = 258
     Top = 243
     Width = 145
     Height = 21
@@ -149,7 +149,7 @@ object FEditBarang: TFEditBarang
       'kg')
   end
   object CheckBox1: TCheckBox
-    Left = 256
+    Left = 258
     Top = 415
     Width = 97
     Height = 17
@@ -157,7 +157,7 @@ object FEditBarang: TFEditBarang
     TabOrder = 8
   end
   object BitBtn2: TBitBtn
-    Left = 344
+    Left = 328
     Top = 464
     Width = 75
     Height = 25

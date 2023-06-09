@@ -16,7 +16,11 @@ type
     Edit2: TEdit;
     Memo1: TMemo;
     BitBtn1: TBitBtn;
+    Label5: TLabel;
+    Edit3: TEdit;
+    BitBtn2: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,13 +43,19 @@ begin
     Close;
     SQL.Clear;
     SQL.Text:= 'INSERT INTO tugas_tiga.pelanggan '+
-    '(nama, alamat, no_telepon) VALUES ('+
-      QuotedStr(Edit1.Text)+','+QuotedStr(Memo1.Text)+','+
-      QuotedStr(Edit2.Text)+
+    '(kode_pelanggan, nama, alamat, no_telepon) VALUES ('+
+      QuotedStr(Edit1.Text)+','+QuotedStr(Edit2.Text)+','+
+      QuotedStr(Memo1.Text)+','+
+      QuotedStr(Edit3.Text)+
     ')';
     Execute;
   end;
   FListPelanggan.BitBtn2.Click;
+  FAddPelanggan.Close;
+end;
+
+procedure TFAddPelanggan.BitBtn2Click(Sender: TObject);
+begin
   FAddPelanggan.Close;
 end;
 

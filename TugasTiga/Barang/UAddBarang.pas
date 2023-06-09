@@ -25,7 +25,9 @@ type
     Label8: TLabel;
     ComboBox1: TComboBox;
     CheckBox1: TCheckBox;
+    BitBtn2: TBitBtn;
     procedure BitBtn1Click(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -59,6 +61,11 @@ begin
     Execute;
   end;
   FListBarang.BitBtn2.Click;
+  FAddBarang.Close;
+end;
+
+procedure TFAddBarang.BitBtn2Click(Sender: TObject);
+begin
   FAddBarang.Close;
 end;
 

@@ -2,7 +2,7 @@ object FListBarang: TFListBarang
   Left = 0
   Top = 0
   Caption = 'FListBarang'
-  ClientHeight = 330
+  ClientHeight = 362
   ClientWidth = 708
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -93,7 +93,7 @@ object FListBarang: TFListBarang
     Left = 0
     Top = 82
     Width = 708
-    Height = 248
+    Height = 280
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -156,7 +156,8 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 698
+    ExplicitLeft = 85
+    ExplicitTop = 46
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4

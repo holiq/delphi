@@ -24,14 +24,19 @@ type
     QSupplier: TFDQuery;
     DataSource1: TDataSource;
     QSupplierid: TFDAutoIncField;
+    QSupplierkode_supplier: TStringField;
     QSuppliernama: TStringField;
     QSupplieralamat: TMemoField;
     QSupplierno_telepon: TStringField;
+    Panel2: TPanel;
+    Label1: TLabel;
+    Edit1: TEdit;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -94,6 +99,20 @@ begin
   FAddSupplier.Memo1.Clear;
   FAddSupplier.ShowModal;
   FAddSupplier.Free;
+end;
+
+procedure TFListSupplier.Edit1Change(Sender: TObject);
+begin
+  QSupplier.MacroByName('WHERE').Value:= ' WHERE users.kode_barang LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
+    QuotedStr('%'+Edit1.Text+'%');
+  QSupplier.Open;
+  while not QSupplier.Eof do
+  begin
+    QSupplier.Refresh;
+    QSupplier.Next;
+  end;
 end;
 
 end.
