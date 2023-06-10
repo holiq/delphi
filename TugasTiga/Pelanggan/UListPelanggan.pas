@@ -105,9 +105,8 @@ end;
 
 procedure TFListPelanggan.Edit1Change(Sender: TObject);
 begin
-  QPelanggan.MacroByName('WHERE').Value:= ' WHERE users.kode_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
+  QPelanggan.MacroByName('WHERE').Value:= ' WHERE kode_pelanggan LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR nama LIKE '+
     QuotedStr('%'+Edit1.Text+'%');
   QPelanggan.Open;
   while not QPelanggan.Eof do

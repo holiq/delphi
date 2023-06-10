@@ -7,12 +7,33 @@ interface
 
 function getmd5(SourceString: string): string;
 function AutoCode(Column, TableName, Prefix: string): string;
+procedure ValidateEdit(Edit: TEdit; Msg: string);
+procedure ValidateMemo(Memo: TMemo; Name: string);
+procedure Validation(Msg: string);
 
 var
-  username,	password, kode: string;
+  username,	password, kode, ValidateMsg: string;
   sort, isActive: Integer;
 
 implementation
+
+procedure Validation(Msg: string);
+begin
+  Messagedlg(Msg+' tidak boleh kosong', mtWarning, [Mbok], 0);
+end;
+procedure ValidateEdit(Edit: TEdit; Msg: string);
+begin
+  if Edit.Text='' then
+    Messagedlg(Msg+' tidak boleh kosong', mtWarning, [Mbok], 0);
+    Exit;
+end;
+
+procedure ValidateMemo(Memo: TMemo; Name: string);
+begin
+  if Memo.Text='' then
+    Messagedlg(Name+' tidak boleh kosong', mtWarning, [Mbok], 0);
+    Exit;
+end;
 
 function AutoCode(Column, TableName, Prefix: string): string;
 begin

@@ -18,7 +18,7 @@ object FListSupplier: TFListSupplier
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 701
+    ExplicitWidth = 698
     object Splitter1: TSplitter
       Left = 1
       Top = 1
@@ -55,7 +55,6 @@ object FListSupplier: TFListSupplier
       Caption = 'Refresh'
       TabOrder = 0
       OnClick = BitBtn2Click
-      ExplicitLeft = 235
     end
     object BitBtn3: TBitBtn
       Left = 160
@@ -66,7 +65,6 @@ object FListSupplier: TFListSupplier
       Caption = 'Hapus'
       TabOrder = 1
       OnClick = BitBtn3Click
-      ExplicitLeft = 157
     end
     object BitBtn4: TBitBtn
       Left = 82
@@ -77,7 +75,6 @@ object FListSupplier: TFListSupplier
       Caption = 'Edit'
       TabOrder = 2
       OnClick = BitBtn4Click
-      ExplicitLeft = 79
     end
     object BitBtn5: TBitBtn
       Left = 4
@@ -88,7 +85,6 @@ object FListSupplier: TFListSupplier
       Caption = 'Tambah'
       TabOrder = 3
       OnClick = BitBtn5Click
-      ExplicitLeft = 1
     end
   end
   object DBGrid1: TDBGrid
@@ -138,7 +134,7 @@ object FListSupplier: TFListSupplier
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitTop = 4
+    ExplicitWidth = 698
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4

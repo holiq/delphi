@@ -35,10 +35,23 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListSupplier;
+uses UDataModule, UListSupplier, UFunction;
 
 procedure TFEditSupplier.BitBtn1Click(Sender: TObject);
 begin
+  if Edit1.Text='' then
+    ValidateMsg:= 'kode supplier'
+  else if Edit2.Text='' then
+    ValidateMsg:= 'nama supplier'
+  else if Edit3.Text='' then
+    ValidateMsg:= 'no telepon supplier';
+
+  if ValidateMsg<>'' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
+
   with DataModule1.QTemp do
   begin
     Close;

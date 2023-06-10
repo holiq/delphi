@@ -50,7 +50,7 @@ implementation
 
 {$R *.dfm}
 
-uses UAddSupplier, UEditSupplier, UDataModule;
+uses UAddSupplier, UEditSupplier, UDataModule, UFunction;
 
 procedure TFListSupplier.BitBtn1Click(Sender: TObject);
 begin
@@ -96,16 +96,15 @@ end;
 procedure TFListSupplier.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddSupplier, FAddSupplier);
-  FAddSupplier.Memo1.Clear;
+  FAddSupplier.Edit1.Text:= AutoCode('kode_supplier', 'supplier', 'SP');
   FAddSupplier.ShowModal;
   FAddSupplier.Free;
 end;
 
 procedure TFListSupplier.Edit1Change(Sender: TObject);
 begin
-  QSupplier.MacroByName('WHERE').Value:= ' WHERE users.kode_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
+  QSupplier.MacroByName('WHERE').Value:= ' WHERE kode_supplier LIKE '+
+    QuotedStr('%'+Edit1.Text+'%')+' OR nama LIKE '+
     QuotedStr('%'+Edit1.Text+'%');
   QSupplier.Open;
   while not QSupplier.Eof do

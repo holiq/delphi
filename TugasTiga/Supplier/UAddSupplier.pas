@@ -34,10 +34,15 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListSupplier;
+uses UDataModule, UListSupplier, UFunction;
 
 procedure TFAddSupplier.BitBtn1Click(Sender: TObject);
 begin
+  ValidateEdit(Edit1, 'kode supplier');
+  ValidateEdit(Edit2, 'nama supplier');
+  ValidateEdit(Edit3, 'no telepon supplier');
+  ValidateMemo(Memo1, 'alamat supplier');
+
   with DataModule1.QTemp do
   begin
     Close;

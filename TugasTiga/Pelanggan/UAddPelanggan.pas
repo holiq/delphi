@@ -34,10 +34,24 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListPelanggan;
+uses UDataModule, UListPelanggan, UFunction;
 
 procedure TFAddPelanggan.BitBtn1Click(Sender: TObject);
 begin
+  if Edit1.Text='' then
+    ValidateMsg:= 'kode pelanggan'
+  else if Edit2.Text='' then
+    ValidateMsg:= 'nama pelanggan'
+  else if Edit3.Text='' then
+    ValidateMsg:= 'no telepon pelanggan';
+
+  if ValidateMsg<>'' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
+
+
   with DataModule1.QTemp do
   begin
     Close;

@@ -98,7 +98,7 @@ begin
   FEditBarang.Edit6.Text:= QBarangharga_barang.AsString;
   if QBarangis_active.AsInteger=1 then
   begin
-    FEditBarang.CheckBox1.Checked;
+    FEditBarang.CheckBox1.Checked:= true;
   end;
 
   FEditBarang.Label5.Caption:= QBarangid.AsString;
@@ -116,7 +116,7 @@ end;
 
 procedure TFListBarang.Edit1Change(Sender: TObject);
 begin
-  QBarang.MacroByName('WHERE').Value:= ' WHERE users.kode_barang LIKE '+
+  QBarang.MacroByName('WHERE').Value:= ' WHERE kode_barang LIKE '+
     QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
     QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
     QuotedStr('%'+Edit1.Text+'%');

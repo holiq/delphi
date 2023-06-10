@@ -18,7 +18,7 @@ object FListPelanggan: TFListPelanggan
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 690
+    ExplicitWidth = 698
     object Splitter1: TSplitter
       Left = 1
       Top = 1
@@ -55,7 +55,6 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Refresh'
       TabOrder = 0
       OnClick = BitBtn2Click
-      ExplicitLeft = 235
     end
     object BitBtn3: TBitBtn
       Left = 160
@@ -66,7 +65,6 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Hapus'
       TabOrder = 1
       OnClick = BitBtn3Click
-      ExplicitLeft = 157
     end
     object BitBtn4: TBitBtn
       Left = 82
@@ -77,8 +75,6 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Edit'
       TabOrder = 2
       OnClick = BitBtn4Click
-      ExplicitLeft = 154
-      ExplicitTop = -4
     end
     object BitBtn5: TBitBtn
       Left = 4
@@ -89,7 +85,6 @@ object FListPelanggan: TFListPelanggan
       Caption = 'Tambah'
       TabOrder = 3
       OnClick = BitBtn5Click
-      ExplicitLeft = 1
     end
   end
   object DBGrid1: TDBGrid
@@ -139,7 +134,7 @@ object FListPelanggan: TFListPelanggan
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitLeft = -8
+    ExplicitWidth = 698
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4

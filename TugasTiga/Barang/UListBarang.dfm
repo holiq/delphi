@@ -156,8 +156,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitLeft = 85
-    ExplicitTop = 46
+    ExplicitWidth = 698
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4
