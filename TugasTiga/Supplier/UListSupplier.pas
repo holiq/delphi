@@ -70,14 +70,14 @@ begin
   if Application.MessageBox('Apakah yakin menghapus data tersebut?',
   'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
   begin
-  with DataModule1.QTemp do
-  begin
-    Close;
-    SQL.Clear;
-    SQL.Text:= 'DELETE FROM tugas_tiga.supplier '+
-      'WHERE supplier.id='+QuotedStr(IntToStr(QSupplierid.AsInteger));
-    Execute;
-  end;
+    with DataModule1.QTemp do
+    begin
+      Close;
+      SQL.Clear;
+      SQL.Text:= 'DELETE FROM tugas_tiga.supplier '+
+        'WHERE supplier.id='+QuotedStr(IntToStr(QSupplierid.AsInteger));
+      Execute;
+    end;
   BitBtn2.Click;
   end;
 end;

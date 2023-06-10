@@ -14,7 +14,10 @@ uses
   UEditPelanggan in 'Pelanggan\UEditPelanggan.pas' {FEditPelanggan},
   UListSupplier in 'Supplier\UListSupplier.pas' {FListSupplier},
   UAddSupplier in 'Supplier\UAddSupplier.pas' {FAddSupplier},
-  UEditSupplier in 'Supplier\UEditSupplier.pas' {FEditSupplier};
+  UEditSupplier in 'Supplier\UEditSupplier.pas' {FEditSupplier},
+  UListPembelian in 'Pembelian\UListPembelian.pas' {FListPembelian},
+  UAddPembelian in 'Pembelian\UAddPembelian.pas' {FAddPembelian},
+  UEditPembelian in 'Pembelian\UEditPembelian.pas' {FEditPembelian};
 
 {$R *.res}
 
@@ -30,5 +33,8 @@ begin
   Application.CreateForm(TFListSupplier, FListSupplier);
   Application.CreateForm(TFAddSupplier, FAddSupplier);
   Application.CreateForm(TFEditSupplier, FEditSupplier);
+  Application.CreateForm(TFListPembelian, FListPembelian);
+  Application.CreateForm(TFAddPembelian, FAddPembelian);
+  Application.CreateForm(TFEditPembelian, FEditPembelian);
   Application.Run;
 end.

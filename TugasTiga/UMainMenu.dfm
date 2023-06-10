@@ -29,6 +29,10 @@ object FMainMenu: TFMainMenu
       Caption = 'Suppplier'
       OnClick = Suppplier1Click
     end
+    object Pembelian1: TMenuItem
+      Caption = 'Pembelian'
+      OnClick = Pembelian1Click
+    end
     object Exit1: TMenuItem
       Caption = 'Exit'
       OnClick = Exit1Click

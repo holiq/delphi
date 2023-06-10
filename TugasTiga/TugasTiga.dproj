@@ -150,6 +150,18 @@
             <Form>FEditSupplier</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Pembelian\UListPembelian.pas">
+            <Form>FListPembelian</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Pembelian\UAddPembelian.pas">
+            <Form>FAddPembelian</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Pembelian\UEditPembelian.pas">
+            <Form>FEditPembelian</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -177,6 +189,12 @@
             </Delphi.Personality>
             <Deployment Version="4">
                 <DeployFile LocalName="Win32\Debug\TugasTiga.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="Win32\Debug\TugasTiga.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>TugasTiga.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployClass Name="AdditionalDebugSymbols">
                     <Platform Name="iOSSimulator">
                         <Operation>1</Operation>

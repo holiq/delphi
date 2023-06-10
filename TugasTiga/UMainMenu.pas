@@ -13,11 +13,13 @@ type
     Pelanggan1: TMenuItem;
     Suppplier1: TMenuItem;
     Exit1: TMenuItem;
+    Pembelian1: TMenuItem;
     procedure Exit1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Barang1Click(Sender: TObject);
     procedure Pelanggan1Click(Sender: TObject);
     procedure Suppplier1Click(Sender: TObject);
+    procedure Pembelian1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +33,7 @@ implementation
 
 {$R *.dfm}
 
-uses ULogin, UListBarang, UListPelanggan, UListSupplier;
+uses ULogin, UListBarang, UListPelanggan, UListSupplier, UListPembelian;
 
 procedure TFMainMenu.Barang1Click(Sender: TObject);
 begin
@@ -45,6 +47,12 @@ begin
   Application.CreateForm(TFListPelanggan, FListPelanggan);
   FListPelanggan.ShowModal;
   FListPelanggan.Free;
+end;
+
+procedure TFMainMenu.Pembelian1Click(Sender: TObject);
+begin
+  Application.CreateForm(TFListPembelian, FListPembelian);
+  FListPembelian.Show;
 end;
 
 procedure TFMainMenu.Suppplier1Click(Sender: TObject);
