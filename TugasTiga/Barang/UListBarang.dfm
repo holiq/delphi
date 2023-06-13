@@ -106,46 +106,55 @@ object FListBarang: TFListBarang
       item
         Expanded = False
         FieldName = 'id'
+        Width = 30
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kode_barang'
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama_barang'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'deskripsi'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'satuan'
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'stok_awal'
+        Width = 70
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'stok_minimal'
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'harga_barang'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'is_active'
+        Width = 50
         Visible = True
       end>
   end

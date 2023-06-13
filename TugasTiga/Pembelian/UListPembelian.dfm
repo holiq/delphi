@@ -113,7 +113,13 @@ object FListPembelian: TFListPembelian
       end
       item
         Expanded = False
+        FieldName = 'nama'
+        Visible = True
+      end
+      item
+        Expanded = False
         FieldName = 'tanggal_pembelian'
+        Width = 120
         Visible = True
       end
       item
@@ -124,11 +130,6 @@ object FListPembelian: TFListPembelian
       item
         Expanded = False
         FieldName = 'no_bukti'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'nama'
         Visible = True
       end>
   end

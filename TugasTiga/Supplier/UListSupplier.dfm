@@ -104,26 +104,31 @@ object FListSupplier: TFListSupplier
       item
         Expanded = False
         FieldName = 'id'
+        Width = 30
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kode_supplier'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'alamat'
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'no_telepon'
+        Width = 80
         Visible = True
       end>
   end
