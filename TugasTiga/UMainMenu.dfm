@@ -33,6 +33,10 @@ object FMainMenu: TFMainMenu
       Caption = 'Pembelian'
       OnClick = Pembelian1Click
     end
+    object Penjualan1: TMenuItem
+      Caption = 'Penjualan'
+      OnClick = Penjualan1Click
+    end
     object Exit1: TMenuItem
       Caption = 'Exit'
       OnClick = Exit1Click

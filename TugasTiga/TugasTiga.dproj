@@ -162,6 +162,18 @@
             <Form>FEditPembelian</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Penjualan\UListPenjualan.pas">
+            <Form>FListPenjualan</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Penjualan\UAddPenjualan.pas">
+            <Form>FAddPenjualan</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Penjualan\UEditPenjualan.pas">
+            <Form>FEditPenjualan</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
