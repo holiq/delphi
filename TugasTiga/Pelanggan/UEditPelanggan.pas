@@ -3,7 +3,8 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
@@ -39,14 +40,14 @@ uses UDataModule, UListPelanggan, UFunction;
 
 procedure TFEditPelanggan.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text='' then
-    ValidateMsg:= 'kode pelanggan'
-  else if Edit2.Text='' then
-    ValidateMsg:= 'nama pelanggan'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'no telepon pelanggan';
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode pelanggan'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'nama pelanggan'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'no telepon pelanggan';
 
-  if ValidateMsg<>'' then
+  if ValidateMsg <> '' then
   begin
     Validation(ValidateMsg);
     Exit;
@@ -56,12 +57,11 @@ begin
   begin
     Close;
     SQL.Clear;;
-    SQL.Text:= 'UPDATE tugas_tiga.pelanggan SET '+
-      'kode_pelanggan='+QuotedStr(Edit1.Text)+', '+
-      'nama='+QuotedStr(Edit2.Text)+', '+
-      'alamat='+QuotedStr(Memo1.Text)+', '+
-      'no_telepon='+QuotedStr(Edit3.Text)+' '+
-      'WHERE pelanggan.id='+QuotedStr(Label5.Caption);
+    SQL.Text := 'UPDATE tugas_tiga.pelanggan SET ' + 'kode_pelanggan=' +
+      QuotedStr(Edit1.Text) + ', ' + 'nama=' + QuotedStr(Edit2.Text) + ', ' +
+      'alamat=' + QuotedStr(Memo1.Text) + ', ' + 'no_telepon=' +
+      QuotedStr(Edit3.Text) + ' ' + 'WHERE pelanggan.id=' +
+      QuotedStr(Label5.Caption);
     Execute;
   end;
   FListPelanggan.BitBtn2.Click;

@@ -3,9 +3,12 @@ unit UEditPenjualan;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient, Vcl.Menus,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Datasnap.DBClient,
+  Vcl.Menus,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.Buttons,
+  Vcl.ExtCtrls,
   System.UITypes;
 
 type
@@ -83,28 +86,27 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Text:='UPDATE penjualan_master SET '+
-      'tanggal_penjualan='+QuotedStr(FormatDateTime('yyyy-mm-dd', DateTimePicker1.DateTime))+','+
-      'kode_pelanggan='+QuotedStr(Edit2.Text)+','+
-      'no_bukti='+QuotedStr(Edit3.Text)+','+
-      'total_harga='+QuotedStr(Edit4.Text)+','+
-      'jumlah_bayar='+QuotedStr(Edit5.Text)+','+
-      'jumlah_kembali='+QuotedStr(Edit6.Text)+' '+
-      'WHERE kode_penjualan='+QuotedStr(Edit1.Text);
+    SQL.Text := 'UPDATE penjualan_master SET ' + 'tanggal_penjualan=' +
+      QuotedStr(FormatDateTime('yyyy-mm-dd', DateTimePicker1.DateTime)) + ',' +
+      'kode_pelanggan=' + QuotedStr(Edit2.Text) + ',' + 'no_bukti=' +
+      QuotedStr(Edit3.Text) + ',' + 'total_harga=' + QuotedStr(Edit4.Text) + ','
+      + 'jumlah_bayar=' + QuotedStr(Edit5.Text) + ',' + 'jumlah_kembali=' +
+      QuotedStr(Edit6.Text) + ' ' + 'WHERE kode_penjualan=' +
+      QuotedStr(Edit1.Text);
     Execute;
   end;
 
-  //Detail
-  //Delete exists data
+  // Detail
+  // Delete exists data
   with DataModule1.Qtemp do
   begin
     Close;
     SQL.Clear;
-    SQL.Text:='DELETE FROM penjualan_detail WHERE kode_penjualan='+
+    SQL.Text := 'DELETE FROM penjualan_detail WHERE kode_penjualan=' +
       QuotedStr(Edit1.Text);
     Execute;
   end;
-  //Store new data
+  // Store new data
   ClientDataSet1.First;
   while not ClientDataSet1.Eof do
   begin
@@ -112,13 +114,13 @@ begin
     begin
       Close;
       SQL.Clear;
-      SQL.Text:='INSERT INTO penjualan_detail(kode_penjualan, kode_barang, quantity, harga_jual, sub_total) VALUES('+
-          QuotedStr(Edit1.Text)+','+
-          QuotedStr(ClientDataSet1kode_barang.Text)+','+
-          FloatToStr(ClientDataSet1quantity.Value)+','+
-          FloatToStr(ClientDataSet1harga_jual.Value)+','+
-          FloatToStr(ClientDataSet1sub_total.Value)+
-      ')';
+      SQL.Text :=
+        'INSERT INTO penjualan_detail(kode_penjualan, kode_barang, quantity, harga_jual, sub_total) VALUES('
+        + QuotedStr(Edit1.Text) + ',' +
+        QuotedStr(ClientDataSet1kode_barang.Text) + ',' +
+        FloatToStr(ClientDataSet1quantity.Value) + ',' +
+        FloatToStr(ClientDataSet1harga_jual.Value) + ',' +
+        FloatToStr(ClientDataSet1sub_total.Value) + ')';
       Execute;
       ClientDataSet1.Next;
     end;
@@ -133,7 +135,8 @@ begin
   Edit4.Clear;
   while not ClientDataSet1.Eof do
   begin
-    Edit4.Text:= FloatToStr(StrToFloatDef(Edit4.Text, 0)-ClientDataSet1sub_total.Value);
+    Edit4.Text := FloatToStr(StrToFloatDef(Edit4.Text, 0) -
+      ClientDataSet1sub_total.Value);
     ClientDataSet1.Next;
   end;
 end;
@@ -143,22 +146,24 @@ begin
   Edit4.Clear;
   while not ClientDataSet1.Eof do
   begin
-    Edit4.Text:= FloatToStr(StrToFloatDef(Edit4.Text, 0)+ClientDataSet1sub_total.Value);
+    Edit4.Text := FloatToStr(StrToFloatDef(Edit4.Text, 0) +
+      ClientDataSet1sub_total.Value);
     ClientDataSet1.Next;
   end;
 end;
 
 procedure TFEditPenjualan.ComboBox1Change(Sender: TObject);
 begin
-  with DataModule1.QTemp do
+  with DataModule1.Qtemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'SELECT kode_pelanggan FROM pelanggan where nama='+QuotedStr(ComboBox1.Text);
+    SQL.Text := 'SELECT kode_pelanggan FROM pelanggan where nama=' +
+      QuotedStr(ComboBox1.Text);
     Open;
     try
-      while not DataModule1.QTemp.Eof do
+      while not DataModule1.Qtemp.Eof do
       begin
-        Edit2.Text:= DataModule1.QTemp.FieldByName('kode_pelanggan').AsString;
+        Edit2.Text := DataModule1.Qtemp.FieldByName('kode_pelanggan').AsString;
         Next;
       end;
     finally
@@ -169,27 +174,32 @@ end;
 
 procedure TFEditPenjualan.DBGrid1ColExit(Sender: TObject);
 begin
-  if (ClientDataSet1.State in [dsInsert, dsEdit]) and (ClientDataSet1kode_barang.Text<>'') then
+  if (ClientDataSet1.State in [dsInsert, dsEdit]) and
+    (ClientDataSet1kode_barang.Text <> '') then
   begin
     with DataModule1.Qtemp do
     begin
-       SQL.Clear;
-       sql.Text := 'SELECT nama_barang, harga_barang, satuan FROM barang WHERE kode_barang='+QuotedStr(ClientDataSet1kode_barang.Text);
-       Open;
+      SQL.Clear;
+      SQL.Text :=
+        'SELECT nama_barang, harga_barang, satuan FROM barang WHERE kode_barang='
+        + QuotedStr(ClientDataSet1kode_barang.Text);
+      Open;
 
-       if RecordCount=0 then
-       Begin
-         Messagedlg('Kode Barang Tidak ditemukan', mtWarning, [Mbok], 0);
-         Exit;
-       End;
+      if RecordCount = 0 then
+      Begin
+        Messagedlg('Kode Barang Tidak ditemukan', mtWarning, [Mbok], 0);
+        Exit;
+      End;
 
-       ClientDataSet1nama_barang.Text:= FieldByName('nama_barang').AsString;
-       ClientDataSet1satuan.Text:= FieldByName('satuan').AsString;
-       ClientDataSet1harga_jual.Text:= FieldByName('harga_barang').AsString;
+      ClientDataSet1nama_barang.Text := FieldByName('nama_barang').AsString;
+      ClientDataSet1satuan.Text := FieldByName('satuan').AsString;
+      ClientDataSet1harga_jual.Text := FieldByName('harga_barang').AsString;
     end;
 
-    if (ClientDataSet1quantity.Value<>0) or (ClientDataSet1harga_jual.Value<>0) then
-      ClientDataSet1sub_total.Value := ClientDataSet1quantity.Value * ClientDataSet1harga_jual.Value;
+    if (ClientDataSet1quantity.Value <> 0) or
+      (ClientDataSet1harga_jual.Value <> 0) then
+      ClientDataSet1sub_total.Value := ClientDataSet1quantity.Value *
+        ClientDataSet1harga_jual.Value;
 
     ClientDataSet1.Post;
   end;
@@ -203,7 +213,8 @@ end;
 
 procedure TFEditPenjualan.Edit5Change(Sender: TObject);
 begin
-  Edit6.Text:= FloatToStr(StrToFloatDef(Edit5.Text, 0)-StrToFloat(Edit4.Text));
+  Edit6.Text := FloatToStr(StrToFloatDef(Edit5.Text, 0) -
+    StrToFloat(Edit4.Text));
 end;
 
 procedure TFEditPenjualan.EDITPopupClick(Sender: TObject);
@@ -213,15 +224,15 @@ end;
 
 procedure TFEditPenjualan.FormCreate(Sender: TObject);
 begin
-  with DataModule1.QTemp do
+  with DataModule1.Qtemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'SELECT nama FROM pelanggan';
+    SQL.Text := 'SELECT nama FROM pelanggan';
     Open;
     try
-      while not DataModule1.QTemp.Eof do
+      while not DataModule1.Qtemp.Eof do
       begin
-        ComboBox1.Items.Add(DataModule1.QTemp.FieldByName('nama').AsString);
+        ComboBox1.Items.Add(DataModule1.Qtemp.FieldByName('nama').AsString);
         Next;
       end;
     finally

@@ -2,8 +2,8 @@ object FListPembelian: TFListPembelian
   Left = 0
   Top = 0
   Caption = 'FListPembelian'
-  ClientHeight = 406
-  ClientWidth = 770
+  ClientHeight = 388
+  ClientWidth = 698
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object FListPembelian: TFListPembelian
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 770
+    Width = 698
     Height = 41
     Align = alTop
     TabOrder = 0
@@ -90,8 +90,8 @@ object FListPembelian: TFListPembelian
   object DBGrid1: TDBGrid
     Left = 0
     Top = 82
-    Width = 770
-    Height = 324
+    Width = 698
+    Height = 306
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -118,12 +118,6 @@ object FListPembelian: TFListPembelian
       end
       item
         Expanded = False
-        FieldName = 'tanggal_pembelian'
-        Width = 120
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'kode_supplier'
         Visible = True
       end
@@ -131,12 +125,18 @@ object FListPembelian: TFListPembelian
         Expanded = False
         FieldName = 'no_bukti'
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tanggal_pembelian'
+        Width = 120
+        Visible = True
       end>
   end
   object Panel2: TPanel
     Left = 0
     Top = 41
-    Width = 770
+    Width = 698
     Height = 41
     Align = alTop
     TabOrder = 2
@@ -146,11 +146,10 @@ object FListPembelian: TFListPembelian
       Left = 4
       Top = 4
       Width = 27
-      Height = 33
+      Height = 15
       Align = alLeft
       Caption = 'Cari: '
       Layout = tlCenter
-      ExplicitHeight = 15
     end
     object Edit1: TEdit
       Left = 36

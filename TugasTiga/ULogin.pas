@@ -3,8 +3,10 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  System.UITypes;
 
 type
   TFormLogin = class(TForm)
@@ -34,15 +36,14 @@ uses UDataModule, UFunction;
 
 procedure TFormLogin.BitBtn1Click(Sender: TObject);
 begin
-  username:= Trim(Edit1.Text);
-  password:= getmd5(Edit2.Text);
+  username := Trim(Edit1.Text);
+  password := getmd5(Edit2.Text);
 
   with DataModule1.QTemp do
   begin
     SQL.Clear;
-    SQL.Add('select * from users where username='+
-      QuotedStr(username));
-    SQL.Add('and password='+QuotedStr(password));
+    SQL.Add('select * from users where username=' + QuotedStr(username));
+    SQL.Add('and password=' + QuotedStr(password));
     Open;
   end;
 
@@ -52,8 +53,8 @@ begin
   end
   else
   begin
-    MessageDlg('User/Password Salah',
-      TMsgDlgType.mtWarning, [TMsgDlgBtn.mbOK], 0);
+    MessageDlg('User/Password Salah', TMsgDlgType.mtWarning,
+      [TMsgDlgBtn.mbOK], 0);
     Edit1.Clear;
     Edit2.Clear;
     Edit1.SetFocus;

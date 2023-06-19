@@ -2,8 +2,8 @@ object FListPelanggan: TFListPelanggan
   Left = 0
   Top = 0
   Caption = 'FListPelanggan'
-  ClientHeight = 362
-  ClientWidth = 708
+  ClientHeight = 326
+  ClientWidth = 688
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object FListPelanggan: TFListPelanggan
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 708
+    Width = 688
     Height = 41
     Align = alTop
     TabOrder = 0
@@ -90,8 +90,8 @@ object FListPelanggan: TFListPelanggan
   object DBGrid1: TDBGrid
     Left = 0
     Top = 82
-    Width = 708
-    Height = 280
+    Width = 688
+    Height = 244
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -104,38 +104,38 @@ object FListPelanggan: TFListPelanggan
       item
         Expanded = False
         FieldName = 'id'
-        Width = 30
+        Width = 50
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kode_pelanggan'
-        Width = 100
+        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama'
-        Width = 100
+        Width = 150
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'alamat'
-        Width = 80
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'no_telepon'
-        Width = 80
+        Width = 120
         Visible = True
       end>
   end
   object Panel2: TPanel
     Left = 0
     Top = 41
-    Width = 708
+    Width = 688
     Height = 41
     Align = alTop
     TabOrder = 2
@@ -145,11 +145,10 @@ object FListPelanggan: TFListPelanggan
       Left = 4
       Top = 4
       Width = 26
-      Height = 33
+      Height = 13
       Align = alLeft
       Caption = 'Cari: '
       Layout = tlCenter
-      ExplicitHeight = 13
     end
     object Edit1: TEdit
       Left = 36

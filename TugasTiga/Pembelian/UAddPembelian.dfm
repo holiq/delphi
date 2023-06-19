@@ -2,8 +2,8 @@ object FAddPembelian: TFAddPembelian
   Left = 0
   Top = 0
   Caption = 'FAddPembelian'
-  ClientHeight = 522
-  ClientWidth = 878
+  ClientHeight = 486
+  ClientWidth = 693
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -49,29 +49,28 @@ object FAddPembelian: TFAddPembelian
   end
   object Panel1: TPanel
     Left = 0
-    Top = 481
-    Width = 878
+    Top = 445
+    Width = 693
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 463
-    ExplicitWidth = 868
+    ExplicitWidth = 688
     object Splitter1: TSplitter
-      Left = 796
+      Left = 621
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 816
     end
     object Splitter2: TSplitter
-      Left = 874
+      Left = 699
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 817
     end
     object BitBtn1: TBitBtn
-      Left = 799
+      Left = 624
       Top = 1
       Width = 75
       Height = 39
@@ -79,10 +78,10 @@ object FAddPembelian: TFAddPembelian
       Caption = 'CANCEL'
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 789
+      ExplicitLeft = 609
     end
     object BitBtn2: TBitBtn
-      Left = 721
+      Left = 546
       Top = 1
       Width = 75
       Height = 39
@@ -90,7 +89,7 @@ object FAddPembelian: TFAddPembelian
       Caption = 'SAVE'
       TabOrder = 1
       OnClick = BitBtn2Click
-      ExplicitLeft = 711
+      ExplicitLeft = 531
     end
   end
   object Edit1: TEdit
@@ -134,8 +133,8 @@ object FAddPembelian: TFAddPembelian
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 212
-    Width = 878
+    Top = 176
+    Width = 693
     Height = 269
     Align = alBottom
     DataSource = DataSource1
@@ -151,37 +150,37 @@ object FAddPembelian: TFAddPembelian
       item
         Expanded = False
         FieldName = 'kode_barang'
-        Width = 100
+        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama_barang'
-        Width = 100
+        Width = 130
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'satuan'
-        Width = 50
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'harga_beli'
-        Width = 60
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'quantity'
-        Width = 50
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'harga_beli'
+        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'sub_total'
-        Width = 50
+        Width = 150
         Visible = True
       end>
   end

@@ -3,7 +3,8 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
@@ -45,38 +46,40 @@ uses UDataModule, UListBarang, UFunction;
 
 procedure TFAddBarang.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text='' then
-    ValidateMsg:= 'kode barang'
-  else if Edit2.Text='' then
-    ValidateMsg:= 'nama barang'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'deskripsi'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'stok awal'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'harga minimal'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'harga barang';
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode barang'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'nama barang'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'deskripsi'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'stok awal'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'harga minimal'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'harga barang';
 
-  if ValidateMsg<>'' then
+  if ValidateMsg <> '' then
   begin
     Validation(ValidateMsg);
     Exit;
   end;
 
   if CheckBox1.Checked then
-    isActive:= 1
+    isActive := 1
   else
-    isActive:= 0;
+    isActive := 0;
 
   with DataModule1.QTemp do
   begin
     Close;
     SQL.Clear;
-    SQL.Text:= 'INSERT INTO tugas_tiga.barang '+
-    '(kode_barang, nama_barang, deskripsi, satuan, stok_awal, stok_minimal,	harga_barang,	is_active) VALUES ('+
-      QuotedStr(Edit1.Text)+','+QuotedStr(Edit2.Text)+','+QuotedStr(Edit3.Text)+','+QuotedStr(ComboBox1.Text)+','+QuotedStr(Edit4.Text)+','+QuotedStr(Edit5.Text)+','+QuotedStr(Edit6.Text)+','+IntToStr(isActive)+
-    ')';
+    SQL.Text := 'INSERT INTO tugas_tiga.barang ' +
+      '(kode_barang, nama_barang, deskripsi, satuan, stok_awal, stok_minimal,	harga_barang,	is_active) VALUES ('
+      + QuotedStr(Edit1.Text) + ',' + QuotedStr(Edit2.Text) + ',' +
+      QuotedStr(Edit3.Text) + ',' + QuotedStr(ComboBox1.Text) + ',' +
+      QuotedStr(Edit4.Text) + ',' + QuotedStr(Edit5.Text) + ',' +
+      QuotedStr(Edit6.Text) + ',' + IntToStr(isActive) + ')';
     Execute;
   end;
   FListBarang.BitBtn2.Click;

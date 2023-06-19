@@ -2,8 +2,8 @@ object FEditPembelian: TFEditPembelian
   Left = 0
   Top = 0
   Caption = 'FEditPembelian'
-  ClientHeight = 522
-  ClientWidth = 878
+  ClientHeight = 486
+  ClientWidth = 693
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -48,29 +48,28 @@ object FEditPembelian: TFEditPembelian
   end
   object Panel1: TPanel
     Left = 0
-    Top = 481
-    Width = 878
+    Top = 445
+    Width = 693
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 463
-    ExplicitWidth = 868
+    ExplicitWidth = 688
     object Splitter1: TSplitter
-      Left = 796
+      Left = 621
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 816
     end
     object Splitter2: TSplitter
-      Left = 874
+      Left = 699
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 817
     end
     object BitBtn1: TBitBtn
-      Left = 799
+      Left = 624
       Top = 1
       Width = 75
       Height = 39
@@ -78,10 +77,10 @@ object FEditPembelian: TFEditPembelian
       Caption = 'CANCEL'
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 789
+      ExplicitLeft = 609
     end
     object BitBtn2: TBitBtn
-      Left = 721
+      Left = 546
       Top = 1
       Width = 75
       Height = 39
@@ -89,18 +88,56 @@ object FEditPembelian: TFEditPembelian
       Caption = 'UPDATE'
       TabOrder = 1
       OnClick = BitBtn2Click
-      ExplicitLeft = 711
+      ExplicitLeft = 531
     end
+  end
+  object Edit1: TEdit
+    Left = 185
+    Top = 8
+    Width = 121
+    Height = 23
+    ReadOnly = True
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 185
+    Top = 125
+    Width = 121
+    Height = 23
+    TabOrder = 2
+  end
+  object Edit3: TEdit
+    Left = 185
+    Top = 165
+    Width = 121
+    Height = 23
+    TabOrder = 3
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 185
+    Top = 46
+    Width = 186
+    Height = 23
+    Date = 45087.000000000000000000
+    Time = 0.416437592590227700
+    TabOrder = 4
+  end
+  object ComboBox1: TComboBox
+    Left = 185
+    Top = 86
+    Width = 145
+    Height = 23
+    TabOrder = 5
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 212
-    Width = 878
+    Top = 176
+    Width = 693
     Height = 269
     Align = alBottom
     DataSource = DataSource1
     PopupMenu = PopupMenu1
-    TabOrder = 1
+    TabOrder = 6
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -111,77 +148,39 @@ object FEditPembelian: TFEditPembelian
       item
         Expanded = False
         FieldName = 'kode_barang'
-        Width = 100
+        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama_barang'
-        Width = 100
+        Width = 130
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'satuan'
-        Width = 50
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'harga_beli'
-        Width = 60
+        Width = 80
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'quantity'
-        Width = 50
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'harga_beli'
+        Width = 120
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'sub_total'
-        Width = 50
+        Width = 150
         Visible = True
       end>
-  end
-  object Edit1: TEdit
-    Left = 185
-    Top = 8
-    Width = 121
-    Height = 23
-    ReadOnly = True
-    TabOrder = 2
-  end
-  object Edit2: TEdit
-    Left = 185
-    Top = 125
-    Width = 121
-    Height = 23
-    TabOrder = 3
-  end
-  object Edit3: TEdit
-    Left = 185
-    Top = 165
-    Width = 121
-    Height = 23
-    TabOrder = 4
-  end
-  object DateTimePicker1: TDateTimePicker
-    Left = 185
-    Top = 46
-    Width = 186
-    Height = 23
-    Date = 45087.000000000000000000
-    Time = 0.416437592590227700
-    TabOrder = 5
-  end
-  object ComboBox1: TComboBox
-    Left = 185
-    Top = 86
-    Width = 145
-    Height = 23
-    TabOrder = 6
   end
   object PopupMenu1: TPopupMenu
     Left = 192
@@ -242,13 +241,7 @@ object FEditPembelian: TFEditPembelian
         Name = 'sub_total'
         DataType = ftFloat
       end>
-    IndexDefs = <
-      item
-        Name = 'DEFAULT_ORDER'
-      end
-      item
-        Name = 'CHANGEINDEX'
-      end>
+    IndexDefs = <>
     Params = <>
     StoreDefs = True
     Left = 352

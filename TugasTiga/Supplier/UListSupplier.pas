@@ -3,11 +3,15 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ExtCtrls;
 
 type
   TFListSupplier = class(TForm)
@@ -68,27 +72,27 @@ end;
 procedure TFListSupplier.BitBtn3Click(Sender: TObject);
 begin
   if Application.MessageBox('Apakah yakin menghapus data tersebut?',
-  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+    'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
   begin
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM tugas_tiga.supplier '+
-        'WHERE supplier.id='+QuotedStr(IntToStr(QSupplierid.AsInteger));
+      SQL.Text := 'DELETE FROM tugas_tiga.supplier ' + 'WHERE supplier.id=' +
+        QuotedStr(IntToStr(QSupplierid.AsInteger));
       Execute;
     end;
-  BitBtn2.Click;
+    BitBtn2.Click;
   end;
 end;
 
 procedure TFListSupplier.BitBtn4Click(Sender: TObject);
 begin
   Application.CreateForm(TFEditSupplier, FEditSupplier);
-  FEditSupplier.Edit1.Text:= QSuppliernama.AsString;
-  FEditSupplier.Memo1.Text:= QSupplieralamat.AsString;
-  FEditSupplier.Edit2.Text:= QSupplierno_telepon.AsString;
-  FEditSupplier.Label5.Caption:= QSupplierid.AsString;
+  FEditSupplier.Edit1.Text := QSuppliernama.AsString;
+  FEditSupplier.Memo1.Text := QSupplieralamat.AsString;
+  FEditSupplier.Edit2.Text := QSupplierno_telepon.AsString;
+  FEditSupplier.Label5.Caption := QSupplierid.AsString;
   FEditSupplier.ShowModal;
   FEditSupplier.Free;
 end;
@@ -96,16 +100,16 @@ end;
 procedure TFListSupplier.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddSupplier, FAddSupplier);
-  FAddSupplier.Edit1.Text:= AutoCode('kode_supplier', 'supplier', 'SP');
+  FAddSupplier.Edit1.Text := AutoCode('kode_supplier', 'supplier', 'SP');
   FAddSupplier.ShowModal;
   FAddSupplier.Free;
 end;
 
 procedure TFListSupplier.Edit1Change(Sender: TObject);
 begin
-  QSupplier.MacroByName('WHERE').Value:= ' WHERE kode_supplier LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR nama LIKE '+
-    QuotedStr('%'+Edit1.Text+'%');
+  QSupplier.MacroByName('WHERE').Value := ' WHERE kode_supplier LIKE ' +
+    QuotedStr('%' + Edit1.Text + '%') + ' OR nama LIKE ' +
+    QuotedStr('%' + Edit1.Text + '%');
   QSupplier.Open;
   while not QSupplier.Eof do
   begin

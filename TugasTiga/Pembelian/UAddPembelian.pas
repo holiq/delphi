@@ -3,9 +3,12 @@ unit UAddPembelian;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Buttons, Data.DB, Vcl.ComCtrls, Vcl.Grids, Vcl.DBGrids, Datasnap.DBClient;
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls,
+  Vcl.StdCtrls,
+  Vcl.Buttons, Data.DB, Vcl.ComCtrls, Vcl.Grids, Vcl.DBGrids,
+  Datasnap.DBClient, System.UITypes;
 
 type
   TFAddPembelian = class(TForm)
@@ -72,29 +75,28 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Text:='INSERT INTO pembelian_master(kode_pembelian, tanggal_pembelian, kode_supplier,no_bukti) VALUES('+
-      QuotedStr(Edit1.Text)+','+
-      QuotedStr(FormatDateTime('yyyy-mm-dd', DateTimePicker1.DateTime))+','+
-      QuotedStr(Edit2.Text)+','+
-      QuotedStr(Edit3.Text)+
-    ')';
+    SQL.Text :=
+      'INSERT INTO pembelian_master(kode_pembelian, tanggal_pembelian, kode_supplier,no_bukti) VALUES('
+      + QuotedStr(Edit1.Text) + ',' +
+      QuotedStr(FormatDateTime('yyyy-mm-dd', DateTimePicker1.DateTime)) + ',' +
+      QuotedStr(Edit2.Text) + ',' + QuotedStr(Edit3.Text) + ')';
     Execute;
   end;
 
-  //Detail
+  // Detail
   while not ClientDataSet1.Eof do
   begin
     with DataModule1.Qtemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:='INSERT INTO pembelian_detail(kode_pembelian, kode_barang, quantity, harga_beli, sub_total) VALUES('+
-          QuotedStr(Edit1.Text)+','+
-          QuotedStr(ClientDataSet1kode_barang.Text)+','+
-          FloatToStr(ClientDataSet1quantity.Value)+','+
-          FloatToStr(ClientDataSet1harga_beli.Value)+','+
-          FloatToStr(ClientDataSet1sub_total.Value)+
-      ')';
+      SQL.Text :=
+        'INSERT INTO pembelian_detail(kode_pembelian, kode_barang, quantity, harga_beli, sub_total) VALUES('
+        + QuotedStr(Edit1.Text) + ',' +
+        QuotedStr(ClientDataSet1kode_barang.Text) + ',' +
+        FloatToStr(ClientDataSet1quantity.Value) + ',' +
+        FloatToStr(ClientDataSet1harga_beli.Value) + ',' +
+        FloatToStr(ClientDataSet1sub_total.Value) + ')';
       Execute;
       ClientDataSet1.Next;
     end;
@@ -106,15 +108,16 @@ end;
 
 procedure TFAddPembelian.ComboBox1Change(Sender: TObject);
 begin
-  with DataModule1.QTemp do
+  with DataModule1.Qtemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'SELECT kode_supplier FROM supplier where nama='+QuotedStr(ComboBox1.Text);
+    SQL.Text := 'SELECT kode_supplier FROM supplier where nama=' +
+      QuotedStr(ComboBox1.Text);
     Open;
     try
-      while not DataModule1.QTemp.Eof do
+      while not DataModule1.Qtemp.Eof do
       begin
-        Edit2.Text:= DataModule1.QTemp.FieldByName('kode_supplier').AsString;
+        Edit2.Text := DataModule1.Qtemp.FieldByName('kode_supplier').AsString;
         Next;
       end;
     finally
@@ -125,15 +128,15 @@ end;
 
 procedure TFAddPembelian.FormCreate(Sender: TObject);
 begin
-  with DataModule1.QTemp do
+  with DataModule1.Qtemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'SELECT nama FROM supplier';
+    SQL.Text := 'SELECT nama FROM supplier';
     Open;
     try
-      while not DataModule1.QTemp.Eof do
+      while not DataModule1.Qtemp.Eof do
       begin
-        ComboBox1.Items.Add(DataModule1.QTemp.FieldByName('nama').AsString);
+        ComboBox1.Items.Add(DataModule1.Qtemp.FieldByName('nama').AsString);
         Next;
       end;
     finally
@@ -160,26 +163,30 @@ end;
 
 procedure TFAddPembelian.DBGrid1ColExit(Sender: TObject);
 begin
-  if (ClientDataSet1.State in [dsInsert, dsEdit]) and (ClientDataSet1kode_barang.Text<>'') then
+  if (ClientDataSet1.State in [dsInsert, dsEdit]) and
+    (ClientDataSet1kode_barang.Text <> '') then
   begin
     with DataModule1.Qtemp do
     begin
-       SQL.Clear;
-       sql.Text := 'SELECT nama_barang, satuan FROM barang WHERE kode_barang='+QuotedStr(ClientDataSet1kode_barang.Text);
-       Open;
+      SQL.Clear;
+      SQL.Text := 'SELECT nama_barang, satuan FROM barang WHERE kode_barang=' +
+        QuotedStr(ClientDataSet1kode_barang.Text);
+      Open;
 
-       if RecordCount=0 then
-       Begin
-         Messagedlg('Kode Barang Tidak ditemukan', mtWarning, [Mbok], 0);
-         Exit;
-       End;
+      if RecordCount = 0 then
+      Begin
+        Messagedlg('Kode Barang Tidak ditemukan', mtWarning, [Mbok], 0);
+        Exit;
+      End;
 
-       ClientDataSet1nama_barang.Text := FieldByName('nama_barang').AsString;
-       ClientDataSet1satuan.Text := FieldByName('satuan').AsString;
+      ClientDataSet1nama_barang.Text := FieldByName('nama_barang').AsString;
+      ClientDataSet1satuan.Text := FieldByName('satuan').AsString;
     end;
 
-    if (ClientDataSet1quantity.Value<>0) or (ClientDataSet1harga_beli.Value<>0) then
-      ClientDataSet1sub_total.Value := ClientDataSet1quantity.Value * ClientDataSet1harga_beli.Value;
+    if (ClientDataSet1quantity.Value <> 0) or
+      (ClientDataSet1harga_beli.Value <> 0) then
+      ClientDataSet1sub_total.Value := ClientDataSet1quantity.Value *
+        ClientDataSet1harga_beli.Value;
 
     ClientDataSet1.Post;
   end;

@@ -3,9 +3,11 @@ unit UListPembelian;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls;
@@ -63,25 +65,25 @@ end;
 procedure TFListPembelian.BitBtn3Click(Sender: TObject);
 begin
   if Application.MessageBox('Apakah yakin menghapus data tersebut?',
-  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+    'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
   begin
-    //Master
+    // Master
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM pembelian_master '+
-        'WHERE kode_pembelian='+QuotedStr(QPembeliankode_pembelian.AsString);
+      SQL.Text := 'DELETE FROM pembelian_master ' + 'WHERE kode_pembelian=' +
+        QuotedStr(QPembeliankode_pembelian.AsString);
       Execute;
     end;
 
-    //Detail
+    // Detail
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM pembelian_detail '+
-        'WHERE kode_pembelian='+QuotedStr(QPembeliankode_pembelian.AsString);
+      SQL.Text := 'DELETE FROM pembelian_detail ' + 'WHERE kode_pembelian=' +
+        QuotedStr(QPembeliankode_pembelian.AsString);
       Execute;
     end;
     BitBtn2.Click;
@@ -92,19 +94,21 @@ procedure TFListPembelian.BitBtn4Click(Sender: TObject);
 begin
   Application.CreateForm(TFEditPembelian, FEditPembelian);
 
-  FEditPembelian.Edit1.Text:= QPembeliankode_pembelian.AsString;
-  FEditPembelian.DateTimePicker1.DateTime:= QPembeliantanggal_pembelian.AsDateTime;
-  FEditPembelian.ComboBox1.Text:= QPembeliannama.AsString;
-  FEditPembelian.Edit2.Text:= QPembeliankode_supplier.AsString;
-  FEditPembelian.Edit3.Text:= QPembelianno_bukti.AsString;
+  FEditPembelian.Edit1.Text := QPembeliankode_pembelian.AsString;
+  FEditPembelian.DateTimePicker1.DateTime :=
+    QPembeliantanggal_pembelian.AsDateTime;
+  FEditPembelian.ComboBox1.Text := QPembeliannama.AsString;
+  FEditPembelian.Edit2.Text := QPembeliankode_supplier.AsString;
+  FEditPembelian.Edit3.Text := QPembelianno_bukti.AsString;
 
   with DataModule1.QTemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'select pembelian_detail.*, barang.nama_barang, barang.satuan from pembelian_detail'+
-      ' INNER JOIN barang ON barang.kode_barang=pembelian_detail.kode_barang'+
-      ' WHERE pembelian_detail.kode_pembelian='+
-      QuotedStr(Qpembeliankode_pembelian.AsString);
+    SQL.Text :=
+      'select pembelian_detail.*, barang.nama_barang, barang.satuan from pembelian_detail'
+      + ' INNER JOIN barang ON barang.kode_barang=pembelian_detail.kode_barang'
+      + ' WHERE pembelian_detail.kode_pembelian=' +
+      QuotedStr(QPembeliankode_pembelian.AsString);
     Open;
     try
       while not DataModule1.QTemp.Eof do
@@ -134,7 +138,8 @@ end;
 procedure TFListPembelian.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddPembelian, FAddPembelian);
-  FAddPembelian.Edit1.Text:= AutoCode('kode_pembelian', 'pembelian_master', 'PO');
+  FAddPembelian.Edit1.Text := AutoCode('kode_pembelian',
+    'pembelian_master', 'PO');
   FAddPembelian.ShowModal;
   FAddPembelian.Free;
 end;

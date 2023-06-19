@@ -3,7 +3,8 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
@@ -47,12 +48,10 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Text:= 'INSERT INTO tugas_tiga.supplier '+
-    '(kode_supplier, nama, alamat, no_telepon) VALUES ('+
-      QuotedStr(Edit1.Text)+','+QuotedStr(Edit2.Text)+','+
-      QuotedStr(Memo1.Text)+','+
-      QuotedStr(Edit3.Text)+
-    ')';
+    SQL.Text := 'INSERT INTO tugas_tiga.supplier ' +
+      '(kode_supplier, nama, alamat, no_telepon) VALUES (' +
+      QuotedStr(Edit1.Text) + ',' + QuotedStr(Edit2.Text) + ',' +
+      QuotedStr(Memo1.Text) + ',' + QuotedStr(Edit3.Text) + ')';
     Execute;
   end;
   FListSupplier.BitBtn2.Click;

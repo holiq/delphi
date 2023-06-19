@@ -3,7 +3,8 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
@@ -39,14 +40,14 @@ uses UDataModule, UListSupplier, UFunction;
 
 procedure TFEditSupplier.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text='' then
-    ValidateMsg:= 'kode supplier'
-  else if Edit2.Text='' then
-    ValidateMsg:= 'nama supplier'
-  else if Edit3.Text='' then
-    ValidateMsg:= 'no telepon supplier';
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode supplier'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'nama supplier'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'no telepon supplier';
 
-  if ValidateMsg<>'' then
+  if ValidateMsg <> '' then
   begin
     Validation(ValidateMsg);
     Exit;
@@ -56,12 +57,11 @@ begin
   begin
     Close;
     SQL.Clear;;
-    SQL.Text:= 'UPDATE tugas_tiga.supplier SET '+
-      'kode_supplier='+QuotedStr(Edit1.Text)+', '+
-      'nama='+QuotedStr(Edit2.Text)+', '+
-      'alamat='+QuotedStr(Memo1.Text)+', '+
-      'no_telepon='+QuotedStr(Edit3.Text)+' '+
-      'WHERE supplier.id='+QuotedStr(Label5.Caption);
+    SQL.Text := 'UPDATE tugas_tiga.supplier SET ' + 'kode_supplier=' +
+      QuotedStr(Edit1.Text) + ', ' + 'nama=' + QuotedStr(Edit2.Text) + ', ' +
+      'alamat=' + QuotedStr(Memo1.Text) + ', ' + 'no_telepon=' +
+      QuotedStr(Edit3.Text) + ' ' + 'WHERE supplier.id=' +
+      QuotedStr(Label5.Caption);
     Execute;
   end;
   FListSupplier.BitBtn2.Click;

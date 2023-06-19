@@ -2,8 +2,8 @@ object FListPenjualan: TFListPenjualan
   Left = 0
   Top = 0
   Caption = 'FListPenjualan'
-  ClientHeight = 405
-  ClientWidth = 779
+  ClientHeight = 387
+  ClientWidth = 820
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,11 @@ object FListPenjualan: TFListPenjualan
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 779
+    Width = 820
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 769
+    ExplicitWidth = 823
     object Splitter1: TSplitter
       Left = 1
       Top = 1
@@ -90,8 +90,8 @@ object FListPenjualan: TFListPenjualan
   object DBGrid1: TDBGrid
     Left = 0
     Top = 82
-    Width = 779
-    Height = 323
+    Width = 820
+    Height = 305
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -104,67 +104,75 @@ object FListPenjualan: TFListPenjualan
       item
         Expanded = False
         FieldName = 'id'
+        Width = 30
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kode_penjualan'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'tanggal_penjualan'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'kode_pelanggan'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'no_bukti'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'total_harga'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'jumlah_bayar'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'jumlah_kembali'
+        Width = 100
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'nama'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'tanggal_penjualan'
+        Width = 105
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kode_pelanggan'
+        Width = 110
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'no_bukti'
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'total_harga'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jumlah_bayar'
+        Width = 85
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'jumlah_kembali'
+        Width = 90
         Visible = True
       end>
   end
   object Panel2: TPanel
     Left = 0
     Top = 41
-    Width = 779
+    Width = 820
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 769
+    ExplicitWidth = 823
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4
       Top = 4
       Width = 27
-      Height = 33
+      Height = 15
       Align = alLeft
       Caption = 'Cari: '
       Layout = tlCenter
-      ExplicitHeight = 15
     end
     object Edit1: TEdit
       Left = 36

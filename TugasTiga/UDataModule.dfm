@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
-  OldCreateOrder = False
-  Height = 342
-  Width = 618
+  Height = 513
+  Width = 927
+  PixelsPerInch = 144
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=tugas_tiga'
@@ -10,12 +10,12 @@ object DataModule1: TDataModule1
       'DriverID=MySQL')
     Connected = True
     LoginPrompt = False
-    Left = 112
-    Top = 64
+    Left = 168
+    Top = 96
   end
   object QTemp: TFDQuery
     Connection = FDConnection1
-    Left = 216
-    Top = 120
+    Left = 324
+    Top = 180
   end
 end

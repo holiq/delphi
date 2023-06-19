@@ -3,9 +3,11 @@ unit UListPenjualan;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
-  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
+  FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.ExtCtrls;
@@ -66,25 +68,25 @@ end;
 procedure TFListPenjualan.BitBtn3Click(Sender: TObject);
 begin
   if Application.MessageBox('Apakah yakin menghapus data tersebut?',
-  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+    'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
   begin
-    //Master
+    // Master
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM penjualan_master '+
-        'WHERE kode_penjualan='+QuotedStr(QPenjualankode_penjualan.AsString);
+      SQL.Text := 'DELETE FROM penjualan_master ' + 'WHERE kode_penjualan=' +
+        QuotedStr(QPenjualankode_penjualan.AsString);
       Execute;
     end;
 
-    //Detail
+    // Detail
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM penjualan_detail '+
-        'WHERE kode_penjualan='+QuotedStr(QPenjualankode_penjualan.AsString);
+      SQL.Text := 'DELETE FROM penjualan_detail ' + 'WHERE kode_penjualan=' +
+        QuotedStr(QPenjualankode_penjualan.AsString);
       Execute;
     end;
     BitBtn2.Click;
@@ -94,21 +96,23 @@ end;
 procedure TFListPenjualan.BitBtn4Click(Sender: TObject);
 begin
   Application.CreateForm(TFEditPenjualan, FEditPenjualan);
-  FEditPenjualan.Edit1.Text:= QPenjualankode_penjualan.AsString;
-  FEditPenjualan.DateTimePicker1.DateTime:= QPenjualantanggal_penjualan.AsDateTime;
-  FEditPenjualan.ComboBox1.Text:= QPenjualannama.AsString;
-  FEditPenjualan.Edit2.Text:= QPenjualankode_pelanggan.AsString;
-  FEditPenjualan.Edit3.Text:= QPenjualanno_bukti.AsString;
-  FEditPenjualan.Edit4.Text:= QPenjualantotal_harga.AsString;
-  FEditPenjualan.Edit5.Text:= QPenjualanjumlah_bayar.AsString;
-  FEditPenjualan.Edit6.Text:= QPenjualanjumlah_kembali.AsString;
+  FEditPenjualan.Edit1.Text := QPenjualankode_penjualan.AsString;
+  FEditPenjualan.DateTimePicker1.DateTime :=
+    QPenjualantanggal_penjualan.AsDateTime;
+  FEditPenjualan.ComboBox1.Text := QPenjualannama.AsString;
+  FEditPenjualan.Edit2.Text := QPenjualankode_pelanggan.AsString;
+  FEditPenjualan.Edit3.Text := QPenjualanno_bukti.AsString;
+  FEditPenjualan.Edit4.Text := QPenjualantotal_harga.AsString;
+  FEditPenjualan.Edit5.Text := QPenjualanjumlah_bayar.AsString;
+  FEditPenjualan.Edit6.Text := QPenjualanjumlah_kembali.AsString;
 
   with DataModule1.QTemp do
   begin
     SQL.Clear;
-    SQL.Text:= 'select penjualan_detail.*, barang.nama_barang, barang.satuan from penjualan_detail'+
-      ' INNER JOIN barang ON barang.kode_barang=penjualan_detail.kode_barang'+
-      ' WHERE penjualan_detail.kode_penjualan='+
+    SQL.Text :=
+      'select penjualan_detail.*, barang.nama_barang, barang.satuan from penjualan_detail'
+      + ' INNER JOIN barang ON barang.kode_barang=penjualan_detail.kode_barang'
+      + ' WHERE penjualan_detail.kode_penjualan=' +
       QuotedStr(QPenjualankode_penjualan.AsString);
     Open;
     try
@@ -139,7 +143,8 @@ end;
 procedure TFListPenjualan.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddPenjualan, FAddPenjualan);
-  FAddPenjualan.Edit1.Text:= AutoCode('kode_penjualan', 'penjualan_master', 'PJ');
+  FAddPenjualan.Edit1.Text := AutoCode('kode_penjualan',
+    'penjualan_master', 'PJ');
   FAddPenjualan.ShowModal;
   FAddPenjualan.Free;
 end;

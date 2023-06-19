@@ -2,8 +2,8 @@ object FEditPelanggan: TFEditPelanggan
   Left = 0
   Top = 0
   Caption = 'FEditPelanggan'
-  ClientHeight = 412
-  ClientWidth = 708
+  ClientHeight = 376
+  ClientWidth = 688
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

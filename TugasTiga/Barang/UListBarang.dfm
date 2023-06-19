@@ -2,7 +2,7 @@ object FListBarang: TFListBarang
   Left = 0
   Top = 0
   Caption = 'FListBarang'
-  ClientHeight = 362
+  ClientHeight = 344
   ClientWidth = 708
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -18,7 +18,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 698
+    ExplicitWidth = 688
     object Splitter1: TSplitter
       Left = 79
       Top = 1
@@ -93,7 +93,7 @@ object FListBarang: TFListBarang
     Left = 0
     Top = 82
     Width = 708
-    Height = 280
+    Height = 262
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -118,7 +118,7 @@ object FListBarang: TFListBarang
       item
         Expanded = False
         FieldName = 'nama_barang'
-        Width = 100
+        Width = 110
         Visible = True
       end
       item
@@ -130,7 +130,7 @@ object FListBarang: TFListBarang
       item
         Expanded = False
         FieldName = 'satuan'
-        Width = 80
+        Width = 60
         Visible = True
       end
       item
@@ -165,7 +165,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 698
+    ExplicitWidth = 688
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4

@@ -2,8 +2,8 @@ object FEditBarang: TFEditBarang
   Left = 0
   Top = 0
   Caption = 'FEditBarang'
-  ClientHeight = 518
-  ClientWidth = 902
+  ClientHeight = 485
+  ClientWidth = 698
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -88,7 +88,7 @@ object FEditBarang: TFEditBarang
   end
   object BitBtn1: TBitBtn
     Left = 242
-    Top = 464
+    Top = 454
     Width = 75
     Height = 25
     Caption = 'UPDATE'
@@ -158,7 +158,7 @@ object FEditBarang: TFEditBarang
   end
   object BitBtn2: TBitBtn
     Left = 328
-    Top = 464
+    Top = 454
     Width = 75
     Height = 25
     Caption = 'CANCEL'

@@ -3,10 +3,15 @@
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls, Data.DB,
-  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error,
-  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ExtCtrls,
+  Data.DB,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error,
+  FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async,
+  FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids;
 
 type
@@ -72,36 +77,36 @@ end;
 procedure TFListBarang.BitBtn3Click(Sender: TObject);
 begin
   if Application.MessageBox('Apakah yakin menghapus data tersebut?',
-  'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
+    'konfirmasi', MB_YESNO or MB_ICONINFORMATION) = idyes then
   begin
     with DataModule1.QTemp do
     begin
       Close;
       SQL.Clear;
-      SQL.Text:= 'DELETE FROM tugas_tiga.barang '+
-        'WHERE barang.id='+QuotedStr(IntToStr(QBarangid.AsInteger));
+      SQL.Text := 'DELETE FROM tugas_tiga.barang ' + 'WHERE barang.id=' +
+        QuotedStr(IntToStr(QBarangid.AsInteger));
       Execute;
     end;
-  BitBtn2.Click;
+    BitBtn2.Click;
   end;
 end;
 
 procedure TFListBarang.BitBtn4Click(Sender: TObject);
 begin
   Application.CreateForm(TFEditBarang, FEditBarang);
-  FEditBarang.Edit1.Text:= QBarangkode_barang.AsString;
-  FEditBarang.Edit2.Text:= QBarangnama_barang.AsString;
-  FEditBarang.Edit3.Text:= QBarangdeskripsi.AsString;
-  FEditBarang.ComboBox1.Text:= QBarangsatuan.AsString;
-  FEditBarang.Edit4.Text:= QBarangstok_awal.AsString;
-  FEditBarang.Edit5.Text:= QBarangstok_minimal.AsString;
-  FEditBarang.Edit6.Text:= QBarangharga_barang.AsString;
-  if QBarangis_active.AsInteger=1 then
+  FEditBarang.Edit1.Text := QBarangkode_barang.AsString;
+  FEditBarang.Edit2.Text := QBarangnama_barang.AsString;
+  FEditBarang.Edit3.Text := QBarangdeskripsi.AsString;
+  FEditBarang.ComboBox1.Text := QBarangsatuan.AsString;
+  FEditBarang.Edit4.Text := QBarangstok_awal.AsString;
+  FEditBarang.Edit5.Text := QBarangstok_minimal.AsString;
+  FEditBarang.Edit6.Text := QBarangharga_barang.AsString;
+  if QBarangis_active.AsInteger = 1 then
   begin
-    FEditBarang.CheckBox1.Checked:= true;
+    FEditBarang.CheckBox1.Checked := true;
   end;
 
-  FEditBarang.Label5.Caption:= QBarangid.AsString;
+  FEditBarang.Label5.Caption := QBarangid.AsString;
   FEditBarang.ShowModal;
   FEditBarang.Free;
 end;
@@ -109,17 +114,17 @@ end;
 procedure TFListBarang.BitBtn5Click(Sender: TObject);
 begin
   Application.CreateForm(TFAddBarang, FAddBarang);
-  FAddBarang.Edit1.Text:= AutoCode('kode_barang', 'barang', 'BR');
+  FAddBarang.Edit1.Text := AutoCode('kode_barang', 'barang', 'BR');
   FAddBarang.ShowModal;
   FAddBarang.Free;
 end;
 
 procedure TFListBarang.Edit1Change(Sender: TObject);
 begin
-  QBarang.MacroByName('WHERE').Value:= ' WHERE kode_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR nama_barang LIKE '+
-    QuotedStr('%'+Edit1.Text+'%')+' OR deskripsi LIKE '+
-    QuotedStr('%'+Edit1.Text+'%');
+  QBarang.MacroByName('WHERE').Value := ' WHERE kode_barang LIKE ' +
+    QuotedStr('%' + Edit1.Text + '%') + ' OR nama_barang LIKE ' +
+    QuotedStr('%' + Edit1.Text + '%') + ' OR deskripsi LIKE ' +
+    QuotedStr('%' + Edit1.Text + '%');
   QBarang.Open;
   while not QBarang.Eof do
   begin

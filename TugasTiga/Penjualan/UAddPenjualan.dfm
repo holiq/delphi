@@ -2,8 +2,8 @@ object FAddPenjualan: TFAddPenjualan
   Left = 0
   Top = 0
   Caption = 'FAddPenjualan'
-  ClientHeight = 522
-  ClientWidth = 778
+  ClientHeight = 486
+  ClientWidth = 758
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -49,8 +49,8 @@ object FAddPenjualan: TFAddPenjualan
   end
   object Panel1: TPanel
     Left = 0
-    Top = 481
-    Width = 778
+    Top = 445
+    Width = 758
     Height = 41
     Align = alBottom
     TabOrder = 0
@@ -184,8 +184,8 @@ object FAddPenjualan: TFAddPenjualan
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 212
-    Width = 778
+    Top = 176
+    Width = 758
     Height = 269
     Align = alBottom
     DataSource = DataSource1
