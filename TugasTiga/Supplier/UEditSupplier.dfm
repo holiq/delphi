@@ -3,7 +3,7 @@ object FEditSupplier: TFEditSupplier
   Top = 0
   Caption = 'FEditSupplier'
   ClientHeight = 412
-  ClientWidth = 708
+  ClientWidth = 678
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

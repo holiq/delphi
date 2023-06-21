@@ -2,14 +2,16 @@ object FormLogin: TFormLogin
   Left = 0
   Top = 0
   Caption = 'FormLogin'
-  ClientHeight = 327
-  ClientWidth = 693
+  ClientHeight = 309
+  ClientWidth = 683
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Position = poDesktopCenter
+  Visible = True
   TextHeight = 13
   object Login: TLabel
     Left = 312

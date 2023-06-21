@@ -2,8 +2,8 @@ object FEditBarang: TFEditBarang
   Left = 0
   Top = 0
   Caption = 'FEditBarang'
-  ClientHeight = 485
-  ClientWidth = 698
+  ClientHeight = 512
+  ClientWidth = 688
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

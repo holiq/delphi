@@ -18,7 +18,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 688
+    ExplicitWidth = 698
     object Splitter1: TSplitter
       Left = 79
       Top = 1
@@ -165,7 +165,7 @@ object FListBarang: TFListBarang
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 688
+    ExplicitWidth = 698
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4
@@ -187,6 +187,7 @@ object FListBarang: TFListBarang
     end
   end
   object QBarang: TFDQuery
+    Active = True
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
       'SELECT * FROM barang'
@@ -203,19 +204,16 @@ object FListBarang: TFListBarang
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object QBarangkode_barang: TStringField
       FieldName = 'kode_barang'
       Origin = 'kode_barang'
       Required = True
-      Size = 255
     end
     object QBarangnama_barang: TStringField
       FieldName = 'nama_barang'
       Origin = 'nama_barang'
       Required = True
-      Size = 255
     end
     object QBarangdeskripsi: TMemoField
       FieldName = 'deskripsi'
@@ -227,25 +225,21 @@ object FListBarang: TFListBarang
       FieldName = 'satuan'
       Origin = 'satuan'
       Required = True
-      Size = 255
     end
-    object QBarangstok_awal: TStringField
+    object QBarangstok_awal: TIntegerField
       FieldName = 'stok_awal'
       Origin = 'stok_awal'
       Required = True
-      Size = 255
     end
-    object QBarangstok_minimal: TStringField
+    object QBarangstok_minimal: TIntegerField
       FieldName = 'stok_minimal'
       Origin = 'stok_minimal'
       Required = True
-      Size = 255
     end
-    object QBarangharga_barang: TStringField
+    object QBarangharga_barang: TSingleField
       FieldName = 'harga_barang'
       Origin = 'harga_barang'
       Required = True
-      Size = 255
     end
     object QBarangis_active: TShortintField
       FieldName = 'is_active'

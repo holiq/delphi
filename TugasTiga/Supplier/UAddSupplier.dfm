@@ -3,7 +3,7 @@ object FAddSupplier: TFAddSupplier
   Top = 0
   Caption = 'FAddSupplier'
   ClientHeight = 412
-  ClientWidth = 708
+  ClientWidth = 668
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

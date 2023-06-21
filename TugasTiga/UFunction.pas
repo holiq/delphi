@@ -8,12 +8,10 @@ uses SysUtils, Variants, Forms, Windows, Controls, StdCtrls, ComCtrls,
 
 function getmd5(SourceString: string): string;
 function AutoCode(Column, TableName, Prefix: string): string;
-procedure ValidateEdit(Edit: TEdit; Msg: string);
-procedure ValidateMemo(Memo: TMemo; Name: string);
 procedure Validation(Msg: string);
 
 var
-  username, password, kode, ValidateMsg: string;
+  username, password, code, ValidateMsg: string;
   sort, isActive: Integer;
 
 implementation
@@ -21,20 +19,6 @@ implementation
 procedure Validation(Msg: string);
 begin
   Messagedlg(Msg + ' tidak boleh kosong', mtWarning, [Mbok], 0);
-end;
-
-procedure ValidateEdit(Edit: TEdit; Msg: string);
-begin
-  if Edit.Text = '' then
-    Messagedlg(Msg + ' tidak boleh kosong', mtWarning, [Mbok], 0);
-  Exit;
-end;
-
-procedure ValidateMemo(Memo: TMemo; Name: string);
-begin
-  if Memo.Text = '' then
-    Messagedlg(Name + ' tidak boleh kosong', mtWarning, [Mbok], 0);
-  Exit;
 end;
 
 function AutoCode(Column, TableName, Prefix: string): string;
@@ -63,9 +47,9 @@ begin
     sort := DataModule1.QTemp.FieldByName('kode').AsInteger + 1;
   end;
 
-  kode := IntToStr(sort);
-  kode := Prefix + Copy('000' + kode, length('000' + kode) - 4, 5);
-  Result := kode;
+  code := IntToStr(sort);
+  code := Prefix + Copy('000' + code, length('000' + code) - 4, 5);
+  Result := code;
 end;
 
 (* function read html5 *)

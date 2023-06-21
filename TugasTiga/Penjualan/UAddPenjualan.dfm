@@ -2,7 +2,7 @@ object FAddPenjualan: TFAddPenjualan
   Left = 0
   Top = 0
   Caption = 'FAddPenjualan'
-  ClientHeight = 486
+  ClientHeight = 512
   ClientWidth = 758
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -49,29 +49,29 @@ object FAddPenjualan: TFAddPenjualan
   end
   object Panel1: TPanel
     Left = 0
-    Top = 445
+    Top = 471
     Width = 758
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitTop = 463
-    ExplicitWidth = 768
+    ExplicitTop = 453
+    ExplicitWidth = 748
     object Splitter1: TSplitter
-      Left = 696
+      Left = 676
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 816
     end
     object Splitter2: TSplitter
-      Left = 774
+      Left = 754
       Top = 1
       Height = 39
       Align = alRight
       ExplicitLeft = 817
     end
     object BitBtn1: TBitBtn
-      Left = 699
+      Left = 679
       Top = 1
       Width = 75
       Height = 39
@@ -79,10 +79,10 @@ object FAddPenjualan: TFAddPenjualan
       Caption = 'CANCEL'
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 689
+      ExplicitLeft = 669
     end
     object BitBtn2: TBitBtn
-      Left = 621
+      Left = 601
       Top = 1
       Width = 75
       Height = 39
@@ -90,7 +90,7 @@ object FAddPenjualan: TFAddPenjualan
       Caption = 'SAVE'
       TabOrder = 1
       OnClick = BitBtn2Click
-      ExplicitLeft = 611
+      ExplicitLeft = 591
     end
   end
   object Edit1: TEdit
@@ -184,7 +184,7 @@ object FAddPenjualan: TFAddPenjualan
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 176
+    Top = 202
     Width = 758
     Height = 269
     Align = alBottom

@@ -57,7 +57,9 @@ begin
   else if Edit3.Text = '' then
     ValidateMsg := 'harga minimal'
   else if Edit3.Text = '' then
-    ValidateMsg := 'harga barang';
+    ValidateMsg := 'harga barang'
+  else
+    ValidateMsg := '';
 
   if ValidateMsg <> '' then
   begin

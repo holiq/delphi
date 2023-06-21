@@ -36,6 +36,19 @@ uses UDataModule, UFunction;
 
 procedure TFormLogin.BitBtn1Click(Sender: TObject);
 begin
+  if Edit1.Text = '' then
+    ValidateMsg := 'username'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'password'
+  else
+    ValidateMsg := '';
+
+  if ValidateMsg <> '' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
+
   username := Trim(Edit1.Text);
   password := getmd5(Edit2.Text);
 
@@ -53,7 +66,7 @@ begin
   end
   else
   begin
-    MessageDlg('User/Password Salah', TMsgDlgType.mtWarning,
+    MessageDlg('Username/Password Salah', TMsgDlgType.mtWarning,
       [TMsgDlgBtn.mbOK], 0);
     Edit1.Clear;
     Edit2.Clear;

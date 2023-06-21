@@ -2,8 +2,8 @@ object FAddBarang: TFAddBarang
   Left = 0
   Top = 0
   Caption = 'FAddBarang'
-  ClientHeight = 503
-  ClientWidth = 708
+  ClientHeight = 512
+  ClientWidth = 678
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

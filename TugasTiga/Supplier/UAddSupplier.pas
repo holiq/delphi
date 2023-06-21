@@ -39,10 +39,20 @@ uses UDataModule, UListSupplier, UFunction;
 
 procedure TFAddSupplier.BitBtn1Click(Sender: TObject);
 begin
-  ValidateEdit(Edit1, 'kode supplier');
-  ValidateEdit(Edit2, 'nama supplier');
-  ValidateEdit(Edit3, 'no telepon supplier');
-  ValidateMemo(Memo1, 'alamat supplier');
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode supplier'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'nama supplier'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'no telepon supplier'
+  else
+    ValidateMsg := '';
+
+  if ValidateMsg <> '' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
 
   with DataModule1.QTemp do
   begin

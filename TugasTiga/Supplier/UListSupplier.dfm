@@ -18,7 +18,7 @@ object FListSupplier: TFListSupplier
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 698
+    ExplicitWidth = 678
     object Splitter1: TSplitter
       Left = 1
       Top = 1
@@ -139,16 +139,17 @@ object FListSupplier: TFListSupplier
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 698
+    ExplicitWidth = 678
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4
       Top = 4
       Width = 26
-      Height = 13
+      Height = 33
       Align = alLeft
       Caption = 'Cari: '
       Layout = tlCenter
+      ExplicitHeight = 13
     end
     object Edit1: TEdit
       Left = 36
@@ -160,6 +161,7 @@ object FListSupplier: TFListSupplier
     end
   end
   object QSupplier: TFDQuery
+    Active = True
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
       'SELECT * FROM supplier'

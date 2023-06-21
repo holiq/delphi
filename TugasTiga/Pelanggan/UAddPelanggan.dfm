@@ -3,7 +3,7 @@ object FAddPelanggan: TFAddPelanggan
   Top = 0
   Caption = 'FAddPelanggan'
   ClientHeight = 412
-  ClientWidth = 708
+  ClientWidth = 678
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

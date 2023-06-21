@@ -44,7 +44,9 @@ begin
   else if Edit2.Text = '' then
     ValidateMsg := 'nama pelanggan'
   else if Edit3.Text = '' then
-    ValidateMsg := 'no telepon pelanggan';
+    ValidateMsg := 'no telepon pelanggan'
+  else
+    ValidateMsg := '';
 
   if ValidateMsg <> '' then
   begin

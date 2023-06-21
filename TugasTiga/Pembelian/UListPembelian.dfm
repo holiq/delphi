@@ -2,8 +2,8 @@ object FListPembelian: TFListPembelian
   Left = 0
   Top = 0
   Caption = 'FListPembelian'
-  ClientHeight = 388
-  ClientWidth = 698
+  ClientHeight = 370
+  ClientWidth = 688
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,11 @@ object FListPembelian: TFListPembelian
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 698
+    Width = 688
     Height = 41
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 760
+    ExplicitWidth = 678
     object Splitter1: TSplitter
       Left = 1
       Top = 1
@@ -90,8 +90,8 @@ object FListPembelian: TFListPembelian
   object DBGrid1: TDBGrid
     Left = 0
     Top = 82
-    Width = 698
-    Height = 306
+    Width = 688
+    Height = 288
     Align = alClient
     DataSource = DataSource1
     TabOrder = 1
@@ -104,6 +104,7 @@ object FListPembelian: TFListPembelian
       item
         Expanded = False
         FieldName = 'id'
+        Width = 50
         Visible = True
       end
       item
@@ -136,20 +137,21 @@ object FListPembelian: TFListPembelian
   object Panel2: TPanel
     Left = 0
     Top = 41
-    Width = 698
+    Width = 688
     Height = 41
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 760
+    ExplicitWidth = 678
     object Label1: TLabel
       AlignWithMargins = True
       Left = 4
       Top = 4
       Width = 27
-      Height = 15
+      Height = 33
       Align = alLeft
       Caption = 'Cari: '
       Layout = tlCenter
+      ExplicitHeight = 15
     end
     object Edit1: TEdit
       Left = 36
@@ -160,6 +162,7 @@ object FListPembelian: TFListPembelian
     end
   end
   object QPembelian: TFDQuery
+    Active = True
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
       

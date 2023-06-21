@@ -72,7 +72,7 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListPenjualan;
+uses UDataModule, UListPenjualan, UFunction;
 
 procedure TFAddPenjualan.BitBtn1Click(Sender: TObject);
 begin
@@ -81,6 +81,31 @@ end;
 
 procedure TFAddPenjualan.BitBtn2Click(Sender: TObject);
 begin
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode penjualan'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'kode pelanggan'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'no bukti/kwitansi'
+  else if Edit4.Text = '' then
+    ValidateMsg := 'total harga'
+  else if Edit5.Text = '' then
+    ValidateMsg := 'jumlah bayar'
+  else if Edit6.Text = '' then
+    ValidateMsg := 'jumlah kembalian'
+  else if ComboBox1.Text = '' then
+    ValidateMsg := 'nama pelanggan'
+  else if ClientDataSet1.RecordCount = 0 then
+    ValidateMsg := 'data barang'
+  else
+    ValidateMsg := '';
+
+  if ValidateMsg <> '' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
+
   // Master
   with DataModule1.Qtemp do
   begin

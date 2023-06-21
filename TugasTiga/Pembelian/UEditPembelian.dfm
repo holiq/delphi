@@ -2,8 +2,8 @@ object FEditPembelian: TFEditPembelian
   Left = 0
   Top = 0
   Caption = 'FEditPembelian'
-  ClientHeight = 486
-  ClientWidth = 693
+  ClientHeight = 512
+  ClientWidth = 703
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -48,12 +48,13 @@ object FEditPembelian: TFEditPembelian
   end
   object Panel1: TPanel
     Left = 0
-    Top = 445
-    Width = 693
+    Top = 471
+    Width = 703
     Height = 41
     Align = alBottom
     TabOrder = 0
-    ExplicitWidth = 688
+    ExplicitTop = 453
+    ExplicitWidth = 693
     object Splitter1: TSplitter
       Left = 621
       Top = 1
@@ -77,7 +78,7 @@ object FEditPembelian: TFEditPembelian
       Caption = 'CANCEL'
       TabOrder = 0
       OnClick = BitBtn1Click
-      ExplicitLeft = 609
+      ExplicitLeft = 614
     end
     object BitBtn2: TBitBtn
       Left = 546
@@ -88,7 +89,7 @@ object FEditPembelian: TFEditPembelian
       Caption = 'UPDATE'
       TabOrder = 1
       OnClick = BitBtn2Click
-      ExplicitLeft = 531
+      ExplicitLeft = 536
     end
   end
   object Edit1: TEdit
@@ -131,8 +132,8 @@ object FEditPembelian: TFEditPembelian
   end
   object DBGrid1: TDBGrid
     Left = 0
-    Top = 176
-    Width = 693
+    Top = 202
+    Width = 703
     Height = 269
     Align = alBottom
     DataSource = DataSource1

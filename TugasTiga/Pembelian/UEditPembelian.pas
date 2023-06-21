@@ -59,7 +59,7 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UListPembelian;
+uses UDataModule, UListPembelian, UFunction;
 
 procedure TFEditPembelian.BitBtn1Click(Sender: TObject);
 begin
@@ -68,6 +68,25 @@ end;
 
 procedure TFEditPembelian.BitBtn2Click(Sender: TObject);
 begin
+  if Edit1.Text = '' then
+    ValidateMsg := 'kode pembelian'
+  else if Edit2.Text = '' then
+    ValidateMsg := 'kode supplier'
+  else if Edit3.Text = '' then
+    ValidateMsg := 'no bukti/kwitansi'
+  else if ComboBox1.Text = '' then
+    ValidateMsg := 'nama supplier'
+  else if ClientDataSet1.RecordCount = 0 then
+    ValidateMsg := 'data barang'
+  else
+    ValidateMsg := '';
+
+  if ValidateMsg <> '' then
+  begin
+    Validation(ValidateMsg);
+    Exit;
+  end;
+
   // Master
   with DataModule1.Qtemp do
   begin
