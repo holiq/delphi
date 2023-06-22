@@ -39,10 +39,10 @@ uses UDataModule, UListSupplier, UFunction;
 
 procedure TFAddSupplier.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode supplier'
-  else if Edit2.Text = '' then
+  if Edit2.Text = '' then
     ValidateMsg := 'nama supplier'
+  else if Memo1.Text = '' then
+    ValidateMsg := 'alamat supplier'
   else if Edit3.Text = '' then
     ValidateMsg := 'no telepon supplier'
   else
@@ -60,8 +60,11 @@ begin
     SQL.Clear;
     SQL.Text := 'INSERT INTO tugas_tiga.supplier ' +
       '(kode_supplier, nama, alamat, no_telepon) VALUES (' +
-      QuotedStr(Edit1.Text) + ',' + QuotedStr(Edit2.Text) + ',' +
-      QuotedStr(Memo1.Text) + ',' + QuotedStr(Edit3.Text) + ')';
+      QuotedStr(Edit1.Text) + ',' +
+      QuotedStr(Edit2.Text) + ',' +
+      QuotedStr(Memo1.Text) + ',' +
+      QuotedStr(Edit3.Text) +
+    ')';
     Execute;
   end;
   FListSupplier.BitBtn2.Click;

@@ -81,20 +81,14 @@ end;
 
 procedure TFEditPenjualan.BitBtn2Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode penjualan'
-  else if Edit2.Text = '' then
-    ValidateMsg := 'kode pelanggan'
+  if ComboBox1.Text = '' then
+    ValidateMsg := 'nama pelanggan'
   else if Edit3.Text = '' then
     ValidateMsg := 'no bukti/kwitansi'
-  else if Edit4.Text = '' then
-    ValidateMsg := 'total harga'
   else if Edit5.Text = '' then
     ValidateMsg := 'jumlah bayar'
   else if Edit6.Text = '' then
     ValidateMsg := 'jumlah kembalian'
-  else if ComboBox1.Text = '' then
-    ValidateMsg := 'nama pelanggan'
   else if ClientDataSet1.RecordCount = 0 then
     ValidateMsg := 'data barang'
   else

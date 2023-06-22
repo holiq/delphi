@@ -70,14 +70,10 @@ end;
 
 procedure TFAddPembelian.BitBtn2Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode pembelian'
-  else if Edit2.Text = '' then
-    ValidateMsg := 'kode supplier'
+  if ComboBox1.Text = '' then
+    ValidateMsg := 'nama supplier'
   else if Edit3.Text = '' then
     ValidateMsg := 'no bukti/kwitansi'
-  else if ComboBox1.Text = '' then
-    ValidateMsg := 'nama supplier'
   else if ClientDataSet1.RecordCount = 0 then
     ValidateMsg := 'data barang'
   else

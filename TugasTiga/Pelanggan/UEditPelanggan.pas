@@ -40,10 +40,10 @@ uses UDataModule, UListPelanggan, UFunction;
 
 procedure TFEditPelanggan.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode pelanggan'
-  else if Edit2.Text = '' then
+  if Edit2.Text = '' then
     ValidateMsg := 'nama pelanggan'
+  else if Memo1.Text = '' then
+    ValidateMsg := 'alamat pelanggan'
   else if Edit3.Text = '' then
     ValidateMsg := 'no telepon pelanggan'
   else
@@ -59,11 +59,12 @@ begin
   begin
     Close;
     SQL.Clear;;
-    SQL.Text := 'UPDATE tugas_tiga.pelanggan SET ' + 'kode_pelanggan=' +
-      QuotedStr(Edit1.Text) + ', ' + 'nama=' + QuotedStr(Edit2.Text) + ', ' +
-      'alamat=' + QuotedStr(Memo1.Text) + ', ' + 'no_telepon=' +
-      QuotedStr(Edit3.Text) + ' ' + 'WHERE pelanggan.id=' +
-      QuotedStr(Label5.Caption);
+    SQL.Text := 'UPDATE tugas_tiga.pelanggan SET ' +
+      'kode_pelanggan=' + QuotedStr(Edit1.Text) + ', ' +
+      'nama=' + QuotedStr(Edit2.Text) + ', ' +
+      'alamat=' + QuotedStr(Memo1.Text) + ', ' +
+      'no_telepon=' + QuotedStr(Edit3.Text) + ' ' +
+      'WHERE pelanggan.id=' + QuotedStr(Label5.Caption);
     Execute;
   end;
   FListPelanggan.BitBtn2.Click;

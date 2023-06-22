@@ -100,6 +100,7 @@ object FEditBarang: TFEditBarang
     Top = 96
     Width = 121
     Height = 21
+    ReadOnly = True
     TabOrder = 1
   end
   object Edit2: TEdit

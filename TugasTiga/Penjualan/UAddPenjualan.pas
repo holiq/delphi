@@ -81,20 +81,14 @@ end;
 
 procedure TFAddPenjualan.BitBtn2Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode penjualan'
-  else if Edit2.Text = '' then
-    ValidateMsg := 'kode pelanggan'
+  if ComboBox1.Text = '' then
+    ValidateMsg := 'nama pelanggan'
   else if Edit3.Text = '' then
     ValidateMsg := 'no bukti/kwitansi'
-  else if Edit4.Text = '' then
-    ValidateMsg := 'total harga'
   else if Edit5.Text = '' then
     ValidateMsg := 'jumlah bayar'
   else if Edit6.Text = '' then
     ValidateMsg := 'jumlah kembalian'
-  else if ComboBox1.Text = '' then
-    ValidateMsg := 'nama pelanggan'
   else if ClientDataSet1.RecordCount = 0 then
     ValidateMsg := 'data barang'
   else
@@ -111,8 +105,8 @@ begin
   begin
     Close;
     SQL.Clear;
-    SQL.Text :=
-      'INSERT INTO penjualan_master(kode_penjualan, tanggal_penjualan, kode_pelanggan,no_bukti, total_harga, jumlah_bayar, jumlah_kembali) VALUES('
+    SQL.Text := 'INSERT INTO penjualan_master' +
+      '(kode_penjualan, tanggal_penjualan, kode_pelanggan,no_bukti, total_harga, jumlah_bayar, jumlah_kembali) VALUES('
       + QuotedStr(Edit1.Text) + ',' +
       QuotedStr(FormatDateTime('yyyy-mm-dd', DateTimePicker1.DateTime)) + ',' +
       QuotedStr(Edit2.Text) + ',' + QuotedStr(Edit3.Text) + ',' +

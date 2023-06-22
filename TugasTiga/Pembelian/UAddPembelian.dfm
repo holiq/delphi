@@ -106,6 +106,7 @@ object FAddPembelian: TFAddPembelian
     Top = 125
     Width = 121
     Height = 23
+    ReadOnly = True
     TabOrder = 2
   end
   object Edit3: TEdit

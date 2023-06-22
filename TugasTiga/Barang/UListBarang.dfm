@@ -187,8 +187,6 @@ object FListBarang: TFListBarang
     end
   end
   object QBarang: TFDQuery
-    Active = True
-    Connection = DataModule1.FDConnection1
     SQL.Strings = (
       'SELECT * FROM barang'
       '&WHERE ')
@@ -204,6 +202,7 @@ object FListBarang: TFListBarang
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object QBarangkode_barang: TStringField
       FieldName = 'kode_barang'

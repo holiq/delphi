@@ -106,6 +106,7 @@ object FAddPenjualan: TFAddPenjualan
     Top = 125
     Width = 121
     Height = 23
+    ReadOnly = True
     TabOrder = 2
   end
   object Edit3: TEdit
@@ -155,15 +156,16 @@ object FAddPenjualan: TFAddPenjualan
     object Label8: TLabel
       Left = 24
       Top = 74
-      Width = 43
+      Width = 56
       Height = 15
-      Caption = 'Kembali'
+      Caption = 'Kembalian'
     end
     object Edit4: TEdit
       Left = 112
       Top = 13
       Width = 121
       Height = 23
+      ReadOnly = True
       TabOrder = 0
     end
     object Edit5: TEdit

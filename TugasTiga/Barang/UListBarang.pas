@@ -43,7 +43,6 @@ type
     procedure BitBtn5Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
   private
@@ -60,11 +59,6 @@ implementation
 {$R *.dfm}
 
 uses UDataModule, UAddBarang, UEditBarang, UFunction;
-
-procedure TFListBarang.BitBtn1Click(Sender: TObject);
-begin
-  FListBarang.Close;
-end;
 
 procedure TFListBarang.BitBtn2Click(Sender: TObject);
 begin

@@ -70,6 +70,7 @@ object FEditSupplier: TFEditSupplier
     Top = 82
     Width = 121
     Height = 21
+    ReadOnly = True
     TabOrder = 0
   end
   object Edit2: TEdit

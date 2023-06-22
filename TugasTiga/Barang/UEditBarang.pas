@@ -47,9 +47,7 @@ uses UListBarang, UDataModule, UFunction;
 
 procedure TFEditBarang.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode barang'
-  else if Edit2.Text = '' then
+  if Edit2.Text = '' then
     ValidateMsg := 'nama barang'
   else if Edit3.Text = '' then
     ValidateMsg := 'deskripsi'

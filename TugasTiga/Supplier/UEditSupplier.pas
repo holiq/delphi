@@ -40,10 +40,10 @@ uses UDataModule, UListSupplier, UFunction;
 
 procedure TFEditSupplier.BitBtn1Click(Sender: TObject);
 begin
-  if Edit1.Text = '' then
-    ValidateMsg := 'kode supplier'
-  else if Edit2.Text = '' then
+  if Edit2.Text = '' then
     ValidateMsg := 'nama supplier'
+  else if Memo1.Text = '' then
+    ValidateMsg := 'alamat supplier'
   else if Edit3.Text = '' then
     ValidateMsg := 'no telepon supplier'
   else
@@ -59,11 +59,12 @@ begin
   begin
     Close;
     SQL.Clear;;
-    SQL.Text := 'UPDATE tugas_tiga.supplier SET ' + 'kode_supplier=' +
-      QuotedStr(Edit1.Text) + ', ' + 'nama=' + QuotedStr(Edit2.Text) + ', ' +
-      'alamat=' + QuotedStr(Memo1.Text) + ', ' + 'no_telepon=' +
-      QuotedStr(Edit3.Text) + ' ' + 'WHERE supplier.id=' +
-      QuotedStr(Label5.Caption);
+    SQL.Text := 'UPDATE tugas_tiga.supplier SET ' +
+      'kode_supplier=' + QuotedStr(Edit1.Text) + ', ' +
+      'nama=' + QuotedStr(Edit2.Text) + ', ' +
+      'alamat=' + QuotedStr(Memo1.Text) + ', ' +
+      'no_telepon=' + QuotedStr(Edit3.Text) + ' ' +
+      'WHERE supplier.id=' + QuotedStr(Label5.Caption);
     Execute;
   end;
   FListSupplier.BitBtn2.Click;

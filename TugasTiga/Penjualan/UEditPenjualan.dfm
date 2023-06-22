@@ -106,6 +106,7 @@ object FEditPenjualan: TFEditPenjualan
     Top = 125
     Width = 121
     Height = 23
+    ReadOnly = True
     TabOrder = 2
   end
   object Edit3: TEdit
@@ -164,6 +165,7 @@ object FEditPenjualan: TFEditPenjualan
       Top = 13
       Width = 121
       Height = 23
+      ReadOnly = True
       TabOrder = 0
     end
     object Edit5: TEdit
