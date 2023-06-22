@@ -37,20 +37,18 @@ implementation
 {$R *.dfm}
 
 uses ULogin, UListBarang, UListPelanggan, UListSupplier, UListPembelian,
-  UListPenjualan;
+  UListPenjualan, UFunction;
 
 procedure TFMainMenu.Barang1Click(Sender: TObject);
 begin
   Application.CreateForm(TFListBarang, FListBarang);
-  FListBarang.ShowModal;
-  FListBarang.Free;
+  FListBarang.Show;
 end;
 
 procedure TFMainMenu.Pelanggan1Click(Sender: TObject);
 begin
   Application.CreateForm(TFListPelanggan, FListPelanggan);
-  FListPelanggan.ShowModal;
-  FListPelanggan.Free;
+  FListPelanggan.Show;
 end;
 
 procedure TFMainMenu.Pembelian1Click(Sender: TObject);
@@ -72,7 +70,15 @@ begin
 end;
 
 procedure TFMainMenu.FormShow(Sender: TObject);
+var
+  I: Integer;
+
 begin
+  for I := 0 to MainMenu1.Items.Count - 1 do
+  begin
+    MainMenu1.Items[I].Visible := false;
+  end;
+
   Application.CreateForm(TFormLogin, FormLogin);
   FormLogin.Show;
 end;

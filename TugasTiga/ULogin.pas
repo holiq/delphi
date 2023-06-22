@@ -32,9 +32,12 @@ implementation
 
 {$R *.dfm}
 
-uses UDataModule, UFunction;
+uses UDataModule, UFunction, UMainMenu;
 
 procedure TFormLogin.BitBtn1Click(Sender: TObject);
+var
+  I: Integer;
+
 begin
   if Edit1.Text = '' then
     ValidateMsg := 'username'
@@ -62,6 +65,10 @@ begin
 
   if DataModule1.QTemp.RecordCount > 0 then
   begin;
+    for I := 0 to FMainMenu.MainMenu1.Items.Count - 1 do
+      begin
+        FMainMenu.MainMenu1.Items[I].Visible := true;
+      end;
     FormLogin.Close;
   end
   else
